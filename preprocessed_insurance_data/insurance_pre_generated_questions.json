@@ -1,0 +1,1946 @@
+[
+    {
+        "question": "Which of the following is a type of general insurance specifically designed to cover the expenses associated with medical treatment and healthcare services?",
+        "options": {
+            "A": "Home insurance",
+            "B": "Auto insurance",
+            "C": "Health insurance",
+            "D": "Life insurance"
+        },
+        "correct_answer": "C",
+        "explanation": "The text explicitly states that \"Health insurance: This type of general insurance covers the cost of medical care.\" It further explains that health insurance pays for or reimburses medical treatment costs for injuries or illnesses. While the context mentions \"general insurance\" covering five types, it only elaborates on health insurance and home insurance (partially). Auto and life insurance are not mentioned.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: General insurance, Health insurance, Medical care, Cost of treatment",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "General insurance",
+            "Health insurance",
+            "Medical care",
+            "Cost of treatment"
+        ],
+        "focal_chunk_index": 145,
+        "context_indices_used": [
+            145,
+            146,
+            156
+        ]
+    },
+    {
+        "question": "What is the source of commission payments in the insurance industry, and to whom are they typically paid?",
+        "options": {
+            "A": "Insurers pay commissions to clients as a reward for loyalty.",
+            "B": "Clients pay commissions to brokers for securing the best policy rates.",
+            "C": "Insurers pay commissions to agents and brokers for selling policies.",
+            "D": "Brokers pay commissions to insurers to underwrite new policies."
+        },
+        "correct_answer": "C",
+        "explanation": "The text explicitly states that commissions (or brokerage) are paid by an \"insurer, and from an insurer only,\" to \"an agent or broker\" for the sale of a policy. Options A, B, and D incorrectly describe the direction and participants of commission payments.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Commission, Brokerage, Insurer, Agent",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Commission",
+            "Brokerage",
+            "Insurer",
+            "Agent"
+        ],
+        "focal_chunk_index": 269,
+        "context_indices_used": [
+            269,
+            273,
+            244
+        ]
+    },
+    {
+        "question": "Which of the following describes the maximum amount an insured person can receive under their insurance policy?",
+        "options": {
+            "A": "Premium",
+            "B": "Deductible",
+            "C": "Sum Insured",
+            "D": "Initial Payout"
+        },
+        "correct_answer": "C",
+        "explanation": "The text defines \"policy limits or coverage limits,\" also known as \"sum insured,\" as the maximum amount for which an individual will be insured. The premium is the cost of the insurance, the deductible is the amount the insured pays before the insurance company covers a claim, and the initial payout is another term for deductible.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: policy limits, coverage limits, sum insured",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "policy limits",
+            "coverage limits",
+            "sum insured"
+        ],
+        "focal_chunk_index": 180,
+        "context_indices_used": [
+            180,
+            182,
+            172
+        ]
+    },
+    {
+        "question": "Why is it important for a client to carefully review the definitions section of an insurance policy?",
+        "options": {
+            "A": "The definitions section clarifies the payment terms for premiums.",
+            "B": "It lists all the supplemental coverages available for purchase.",
+            "C": "The definitions section can legally restrict or limit the coverage provided.",
+            "D": "It provides contact information for filing a claim."
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text explicitly states that the definitions section defines \"legally binding terms\" which \"may also restrict or limit coverage.\" Options A, B, and D are not mentioned in the context provided.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Definitions, Legally Binding Terms, Coverage, Restrictions",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Definitions",
+            "Legally Binding Terms",
+            "Coverage",
+            "Restrictions"
+        ],
+        "focal_chunk_index": 201,
+        "context_indices_used": [
+            201,
+            202,
+            191
+        ]
+    },
+    {
+        "question": "Which of the following is NOT typically considered a form of coverage offered under a health insurance policy, according to the provided text?",
+        "options": {
+            "A": "Maternity care costs",
+            "B": "Treatment of pre-existing diseases",
+            "C": "Costs related to accidents and injuries",
+            "D": "Loss of income due to illness"
+        },
+        "correct_answer": "D",
+        "explanation": "The text specifically mentions maternity cover, pre-existing disease cover, and accident cover (including separate A&H policies) as being part of health insurance. It does not mention loss of income coverage.\nRelevanceScore: 4\nDifficulty: Easy\nKeywords: Health insurance, coverage, maternity, accident",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "Health insurance",
+            "coverage",
+            "maternity",
+            "accident"
+        ],
+        "focal_chunk_index": 146,
+        "context_indices_used": [
+            146,
+            149,
+            145
+        ]
+    },
+    {
+        "question": "In an insurance policy, which section specifies what the insurer will pay for in the event of a claim?",
+        "options": {
+            "A": "Declaration",
+            "B": "Agreements",
+            "C": "Exclusions",
+            "D": "Conditions"
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that the \"Agreements\" section of a policy specifies \"what the insurance company has agreed to pay for when a claim arises.\" The Declaration provides a policy summary, Exclusions detail what is NOT covered, and Conditions outline requirements for coverage to remain in effect.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Agreements, policy, claims, coverage",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Agreements",
+            "policy",
+            "claims",
+            "coverage"
+        ],
+        "focal_chunk_index": 174,
+        "context_indices_used": [
+            174,
+            188,
+            175
+        ]
+    },
+    {
+        "question": "John has a motor insurance policy with a $500 deductible and a $10,000 coverage limit. If John is involved in an accident resulting in $11,000 in damages, how much will the insurance company pay?",
+        "options": {
+            "A": "$0",
+            "B": "$500",
+            "C": "$10,000",
+            "D": "$10,500"
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text explains that the coverage limit (or sum insured) is the maximum amount the insurance company will pay. While John's damages are $11,000, his policy only covers up to $10,000. He is responsible for the deductible ($500) and any amount exceeding the coverage limit ($1,000).\nRelevanceScore: 5\nDifficulty: Medium\nKeywords: Deductible, Coverage Limit, Sum Insured, Premium",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "Deductible",
+            "Coverage Limit",
+            "Sum Insured",
+            "Premium"
+        ],
+        "focal_chunk_index": 182,
+        "context_indices_used": [
+            182,
+            180,
+            183
+        ]
+    },
+    {
+        "question": "Which of the following best describes the loss ratio in insurance?",
+        "options": {
+            "A": "The ratio of operating expenses to written premiums.",
+            "B": "The percentage of premiums paid out as claims by the insurer.",
+            "C": "The proportion of incurred losses compared to the total assets of the insurer.",
+            "D": "The ratio of policyholders' surplus to total liabilities."
+        },
+        "correct_answer": "B",
+        "explanation": "The provided text defines the loss ratio as \"the percentage of premiums paid out as claims by the insurer.\" Options A, C, and D describe other financial ratios but not the loss ratio.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Loss Ratio, Earned Premiums, Incurred Losses, Profitability",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Loss Ratio",
+            "Earned Premiums",
+            "Incurred Losses",
+            "Profitability"
+        ],
+        "focal_chunk_index": 319,
+        "context_indices_used": [
+            319,
+            347,
+            330
+        ]
+    },
+    {
+        "question": "What could happen if the conditions of an insurance policy are not met?",
+        "options": {
+            "A": "The insurer is obligated to extend the coverage period.",
+            "B": "The coverage may not begin, may cease to be effective, or a claim could be denied.",
+            "C": "The policyholder receives a full refund of premiums paid.",
+            "D": "The inception and effective dates of the policy are automatically adjusted."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that if policy conditions are not met, the insurer can decide not to start coverage (\"incept\"), stop coverage, or deny a claim.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Policy conditions, Inception, Coverage, Claim denial",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Policy conditions",
+            "Inception",
+            "Coverage",
+            "Claim denial"
+        ],
+        "focal_chunk_index": 211,
+        "context_indices_used": [
+            211,
+            14,
+            255
+        ]
+    },
+    {
+        "question": "In the insurance context, what constitutes the \"reward\" for the insurer?",
+        "options": {
+            "A": "The claims paid out to policyholders.",
+            "B": "The operating expenses of running the insurance business.",
+            "C": "The premiums collected and any investment income earned on those premiums.",
+            "D": "The risk transferred to a reinsurer through a reinsurance policy."
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text explicitly states that the \"reward\" is \"the premium (and investment income).\" Option A describes a cost for the insurer, not a reward. Option B is also a cost. Option D describes a risk management strategy, not the fundamental reward of the insurance business.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Risk, Reward, Premium, Investment Income",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Risk",
+            "Reward",
+            "Premium",
+            "Investment Income"
+        ],
+        "focal_chunk_index": 60,
+        "context_indices_used": [
+            60,
+            62,
+            17
+        ]
+    },
+    {
+        "question": "How might a client obtain an insurance policy?",
+        "options": {
+            "A": "Directly from the insurer or through an insurance intermediary.",
+            "B": "Only through a licensed insurance broker.",
+            "C": "By contacting the government insurance office.",
+            "D": "Exclusively through online comparison websites."
+        },
+        "correct_answer": "A",
+        "explanation": "The text states that clients \"may obtain policies either directly from insurers or through intermediaries.\" This eliminates options B and D which present limited acquisition channels. Option C is not mentioned in the text.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: insurance policy, insurers, intermediaries, brokers",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "insurance policy",
+            "insurers",
+            "intermediaries",
+            "brokers"
+        ],
+        "focal_chunk_index": 6,
+        "context_indices_used": [
+            6,
+            23,
+            297
+        ]
+    },
+    {
+        "question": "In the broader insurance context, what does the term \"co-insurance\" typically refer to?",
+        "options": {
+            "A": "The portion of a medical bill a policyholder pays before insurance coverage begins.",
+            "B": "An agreement where multiple insurance companies share the risk of a single policy.",
+            "C": "The percentage of the cost of a claim that the insured person is responsible for paying.",
+            "D": "A type of insurance that covers the costs of long-term care."
+        },
+        "correct_answer": "B",
+        "explanation": "The provided text specifically states that in general insurance, co-insurance refers to \"arrangements involving multiple insurers sharing risk on a single policy.\" Options A and C describe other cost-sharing mechanisms but not the general meaning of co-insurance. Option D is unrelated.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: co-insurance, risk-sharing, multiple insurers",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "co-insurance",
+            "risk-sharing",
+            "multiple insurers"
+        ],
+        "focal_chunk_index": 267,
+        "context_indices_used": [
+            267,
+            265,
+            264
+        ]
+    },
+    {
+        "question": "Which of the following is NOT typically covered under a standard fire and special perils policy for home insurance?",
+        "options": {
+            "A": "Damage from an earthquake.",
+            "B": "Damage from a burst water pipe.",
+            "C": "Loss of personal valuables due to theft.",
+            "D": "Damage from a riot."
+        },
+        "correct_answer": "C",
+        "explanation": "The text states that standard fire and special perils policies cover natural calamities (like earthquakes), damage from bursting pipes, and damage from man-made activities like riots. It specifically mentions that coverage for valuables *inside* the property (like those lost in a theft) usually requires additional endorsements or riders, meaning it's not standard. RelevanceScore: 4\nDifficulty: Easy\nKeywords: Home insurance, fire and special perils policy, coverage, valuables",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "Home insurance",
+            "fire and special perils policy",
+            "coverage",
+            "valuables"
+        ],
+        "focal_chunk_index": 154,
+        "context_indices_used": [
+            154,
+            155,
+            157
+        ]
+    },
+    {
+        "question": "Which section of an insurance policy would specify that coverage is not provided if the driver of an insured vehicle is under the age of 25 at the time of an accident?",
+        "options": {
+            "A": "Declarations",
+            "B": "Exclusions",
+            "C": "Conditions",
+            "D": "Endorsements"
+        },
+        "correct_answer": "B",
+        "explanation": "The provided text states that the \"Exclusions\" section defines specific risk exposures for which coverage will *not* be provided. The example given is a driver under the age of 25 being involved in an accident. The other sections serve different purposes: \"Declarations\" summarizes key policy information, \"Conditions\" outlines requirements for coverage to be effective, and \"Endorsements\" detail modifications to the main coverage. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Exclusions, policy sections, coverage limitations, risk exposures",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Exclusions",
+            "policy sections",
+            "coverage limitations",
+            "risk exposures"
+        ],
+        "focal_chunk_index": 175,
+        "context_indices_used": [
+            175,
+            225,
+            174
+        ]
+    },
+    {
+        "question": "How is a broker incentivized to choose a specific insurance policy for a client from among multiple insurers they represent?",
+        "options": {
+            "A": "Brokers prioritize policies with the lowest premiums to benefit the client, regardless of commission structure.",
+            "B": "Brokers select policies from insurers offering the highest commission percentage for that policy type.",
+            "C": "Brokers always recommend the policy with the most comprehensive coverage, irrespective of cost or commission.",
+            "D": "Brokers offer the policy from the insurer with whom they have the longest-standing relationship."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states, \"a broker is incentivized to sell their clients the insurance policy from the insurer that offers the highest commission percentage.\" While brokers may negotiate competitive premiums and aim to find the best coverage for clients, their commission structure influences their choices among available policies. RelevanceScore: 5 Difficulty: Easy Keywords: Broker, Commission, Insurer, Agent",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Broker",
+            "Commission",
+            "Insurer",
+            "Agent"
+        ],
+        "focal_chunk_index": 12,
+        "context_indices_used": [
+            12,
+            23,
+            20
+        ]
+    },
+    {
+        "question": "Which section of an insurance policy details the specific risks covered, such as water damage and fire damage in a home insurance policy?",
+        "options": {
+            "A": "Declaration",
+            "B": "Agreements",
+            "C": "Definitions",
+            "D": "Exclusions"
+        },
+        "correct_answer": "B",
+        "explanation": "The provided text explains that the \"Agreements\" section identifies and explains in detail all the types of risk covered. It gives the example of a home insurance policy detailing coverage for water damage and fire damage under this section. The Declaration provides a summary of key information, Definitions explains terms, and Exclusions details what is *not* covered.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Agreements, Risk, Coverage, Policy",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Agreements",
+            "Risk",
+            "Coverage",
+            "Policy"
+        ],
+        "focal_chunk_index": 188,
+        "context_indices_used": [
+            188,
+            189,
+            174
+        ]
+    },
+    {
+        "question": "A large shipping company frequently transports goods using the same vessels and routes. How do they typically handle marine cargo insurance for these regular shipments?",
+        "options": {
+            "A": "They negotiate and secure a new marine cargo policy for every single transport.",
+            "B": "They rely solely on certificates of insurance issued for each individual voyage.",
+            "C": "They typically maintain a continuous policy and do not create a new policy for each individual shipment.",
+            "D": "They insure only a small percentage of their regular shipments to minimize costs."
+        },
+        "correct_answer": "C",
+        "explanation": "The text explicitly states that large shipping companies with consistent shipping patterns \"do not negotiate and take out a marine cargo policy for every single transport.\" This implies they utilize a continuous or ongoing policy structure rather than individual policies for each shipment. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Marine insurance, cargo policy, shipping, policy renewal",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Marine insurance",
+            "cargo policy",
+            "shipping",
+            "policy renewal"
+        ],
+        "focal_chunk_index": 229,
+        "context_indices_used": [
+            229,
+            238,
+            233
+        ]
+    },
+    {
+        "question": "How do insurance companies typically manage and optimize their risk portfolios?",
+        "options": {
+            "A": "By solely retaining all risks and liabilities to maximize potential profits.",
+            "B": "By investing in high-risk, high-reward financial instruments.",
+            "C": "By transferring portions of their risk to other entities, such as reinsurers, in exchange for premiums.",
+            "D": "By focusing on attracting only low-risk policyholders."
+        },
+        "correct_answer": "C",
+        "explanation": "The text explicitly states that insurance companies often pass on part (or all) of their risk to another entity, like a reinsurance company, at either the individual policy or portfolio level, in return for a premium. This action optimizes their own risk portfolio. Options A, B, and D are not mentioned or implied as primary risk management strategies for insurers in the context. RelevanceScore: 5\nDifficulty: Easy\nKeywords: risk portfolio, reinsurance, premium, risk transfer",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "risk portfolio",
+            "reinsurance",
+            "premium",
+            "risk transfer"
+        ],
+        "focal_chunk_index": 59,
+        "context_indices_used": [
+            59,
+            42,
+            40
+        ]
+    },
+    {
+        "question": "Which of the following is NOT typically covered under a standard fire and special perils policy for home insurance?",
+        "options": {
+            "A": "Damage from an earthquake.",
+            "B": "Damage from a burst water pipe.",
+            "C": "Damage to a neighbor's property caused by a fire originating in the insured's home.",
+            "D": "Damage from a lightning strike."
+        },
+        "correct_answer": "C",
+        "explanation": "While standard fire and special perils policies cover damage to the insured home from various perils including natural calamities (like earthquakes and lightning) and bursting pipes, they do not typically cover damage to *third-party* properties. The text mentions that *fire insurance* can cover third-party property damage, but this is distinct from the \"standard fire and special perils policy\" described within the home insurance section. RelevanceScore: 4\nDifficulty: Medium\nKeywords: Fire insurance, Home insurance, Standard fire and special perils policy, Public liability coverage",
+        "relevance_score": 4,
+        "difficulty": "Medium",
+        "keywords": [
+            "Fire insurance",
+            "Home insurance",
+            "Standard fire and special perils policy",
+            "Public liability coverage"
+        ],
+        "focal_chunk_index": 159,
+        "context_indices_used": [
+            159,
+            154,
+            157
+        ]
+    },
+    {
+        "question": "Which of the following best describes the function of endorsements in an insurance policy?",
+        "options": {
+            "A": "Endorsements define the specific risks for which coverage will not be provided.",
+            "B": "Endorsements outline the duties and obligations the insured must fulfill to maintain coverage.",
+            "C": "Endorsements modify the original policy, potentially adding, changing, or removing clauses.",
+            "D": "Endorsements describe the conditions required for the coverage to become active."
+        },
+        "correct_answer": "C",
+        "explanation": "The text defines \"Endorsements\" as a section describing \"modifications which have been made to the main coverage,\" and further explains they \"may add, modify, or exclude clauses mentioned elsewhere in the policy.\" Option A describes exclusions. Option B describes conditions. Option D also describes conditions. RelevanceScore: 4\nDifficulty: Easy\nKeywords: Endorsements, Policy Modifications, Clauses, Mid-term Adjustments",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "Endorsements",
+            "Policy Modifications",
+            "Clauses",
+            "Mid-term Adjustments"
+        ],
+        "focal_chunk_index": 210,
+        "context_indices_used": [
+            210,
+            175,
+            225
+        ]
+    },
+    {
+        "question": "In the insurance process, which entity ultimately bears the financial responsibility for paying a client's valid claim?",
+        "options": {
+            "A": "The insurance broker",
+            "B": "The insurance agent",
+            "C": "The insurance company",
+            "D": "The reinsurer"
+        },
+        "correct_answer": "C",
+        "explanation": "The text clearly states that \"it is the insurance company that pays for the claim, making them the risk-taker.\" While brokers and agents might handle the claim process, they only transfer funds received from the insurance company. Although the text mentions reinsurers, they are involved in risk-sharing between insurance entities and not directly with client claims payments according to the provided text.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: insurance company, risk-taker, claims, broker",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "insurance company",
+            "risk-taker",
+            "claims",
+            "broker"
+        ],
+        "focal_chunk_index": 40,
+        "context_indices_used": [
+            40,
+            44,
+            13
+        ]
+    },
+    {
+        "question": "An insurance policy has the header \"Marine.\" What is the primary coverage provided by this policy?",
+        "options": {
+            "A": "Third-party liability for boating accidents.",
+            "B": "Coverage for a home located near the coast.",
+            "C": "Insurance for a watercraft.",
+            "D": "Protection against flooding and water damage to property."
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text explains that the \"policy header\" indicates the main insurance risk covered. A \"Marine\" header therefore signifies that the policy primarily deals with watercraft insurance, similar to how \"Motor\" signifies a motor vehicle policy. While the policy might include other coverages (like third-party liability), the header points to the main subject.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Policy header, marine insurance, motor policy, coverage",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Policy header",
+            "marine insurance",
+            "motor policy",
+            "coverage"
+        ],
+        "focal_chunk_index": 187,
+        "context_indices_used": [
+            187,
+            185,
+            179
+        ]
+    },
+    {
+        "question": "In the general insurance context, what does co-insurance refer to?",
+        "options": {
+            "A": "The portion of a medical bill a patient pays before insurance coverage begins.",
+            "B": "An agreement where multiple insurance companies share the risk of a single policy.",
+            "C": "The percentage of the total claim amount an insured person is responsible for.",
+            "D": "A policy provision allowing for multiple types of coverage under a single plan."
+        },
+        "correct_answer": "B",
+        "explanation": "The provided text defines co-insurance in the general insurance context as \"arrangements involving multiple insurers sharing risk on a single policy.\" While the text mentions co-insurance in medical insurance relating to the initial amount a patient pays (option A), this is specifically distinguished from the general meaning. Options C and D are not mentioned in the given context.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: co-insurance, risk-sharing, multiple insurers",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "co-insurance",
+            "risk-sharing",
+            "multiple insurers"
+        ],
+        "focal_chunk_index": 265,
+        "context_indices_used": [
+            265,
+            267,
+            264
+        ]
+    },
+    {
+        "question": "Which of the following is typically covered under a standard home insurance policy without requiring additional endorsements?",
+        "options": {
+            "A": "Loss of valuable jewelry due to theft",
+            "B": "Damage to the home's structure from a fire",
+            "C": "Flood damage to personal belongings stored in the basement",
+            "D": "Earthquake damage to landscaping around the property"
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that home insurance \"offers financial protection for the structure of your home,\" indicating that damage from fire, a listed peril, would be covered. It also notes that coverage for \"valuables inside the property typically requires additional endorsements or riders,\" implying options A, C, and D would likely necessitate additional coverage. RelevanceScore: 5 Difficulty: Easy Keywords: Home insurance, coverage, endorsements, perils",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Home insurance",
+            "coverage",
+            "endorsements",
+            "perils"
+        ],
+        "focal_chunk_index": 156,
+        "context_indices_used": [
+            156,
+            154,
+            155
+        ]
+    },
+    {
+        "question": "What is the primary purpose of setting reserves in insurance?",
+        "options": {
+            "A": "To maximize profits by minimizing payouts to claimants.",
+            "B": "To ensure there are sufficient funds available to cover future claim payments.",
+            "C": "To invest excess premiums in profitable ventures.",
+            "D": "To predict the exact amount of all future claims."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that reserves \"represent the estimated amount of money needed to cover future claim payments\" and are \"typically set at a level that provides a reasonable degree of certainty that there will be sufficient funds available to cover all future claims.\" Options A, C, and D are not mentioned or implied in the text. While accurate prediction is a goal, the provided text emphasizes having *sufficient* funds, not achieving perfect prediction. RelevanceScore: 5 Difficulty: Easy Keywords: Reserving, Claims, Reserves, Funding",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Reserving",
+            "Claims",
+            "Reserves",
+            "Funding"
+        ],
+        "focal_chunk_index": 355,
+        "context_indices_used": [
+            355,
+            61,
+            359
+        ]
+    },
+    {
+        "question": "A homeowner's insurance policy incepts on July 1 st, 2024, covering the house, a detached garage, and scheduled jewelry. The garage coverage begins on August 1 st, 2024, and the jewelry coverage on September 1 st, 2024. What is the effective date for the house coverage?",
+        "options": {
+            "A": "August 1 st, 2024",
+            "B": "September 1 st, 2024",
+            "C": "July 1 st, 2024",
+            "D": "The effective date is not determinable from the provided information."
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text explains that when a policy has multiple coverages, the inception date may serve as the general starting point, while specific effective dates apply to *individual* coverages. It also states that if a policy only has *one* type of coverage, the inception and effective dates are the same. Because the house is part of the initial policy inception on July 1 st, and no other effective date for the house itself is given, the effective date for the house coverage is also July 1 st, 2024. The other dates pertain only to the other coverages. RelevanceScore: 5\nDifficulty: Medium\nKeywords: Inception date, Effective date, Coverage, Policy",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "Inception date",
+            "Effective date",
+            "Coverage",
+            "Policy"
+        ],
+        "focal_chunk_index": 259,
+        "context_indices_used": [
+            259,
+            257,
+            256
+        ]
+    },
+    {
+        "question": "If a homeowner's insurance policy covers both dwelling and personal liability, and the dwelling coverage begins on January 1 st while the personal liability coverage begins on January 5 th, what is the policy's inception date?",
+        "options": {
+            "A": "January 5 th",
+            "B": "January 1 st",
+            "C": "The later of the two coverage effective dates.",
+            "D": "The average of the two coverage effective dates."
+        },
+        "correct_answer": "B",
+        "explanation": "The passage states that the inception date is the start date of the policy itself. While individual coverages within a policy might have different effective dates, the policy's inception date remains the date when the policy as a whole starts. In this scenario, even though liability coverage begins on January 5 th, the policy itself began on January 1 st with the start of dwelling coverage. RelevanceScore: 4\nDifficulty: Medium\nKeywords: Inception date, Effective date, Policy, Coverage",
+        "relevance_score": 4,
+        "difficulty": "Medium",
+        "keywords": [
+            "Inception date",
+            "Effective date",
+            "Policy",
+            "Coverage"
+        ],
+        "focal_chunk_index": 255,
+        "context_indices_used": [
+            255,
+            257,
+            258
+        ]
+    },
+    {
+        "question": "In the insurance context, what is the most accurate definition of co-insurance?",
+        "options": {
+            "A": "Arrangements where multiple insurers share risk on a single policy.",
+            "B": "A synonym for reinsurance.",
+            "C": "Risk covered by multiple insurance companies.",
+            "D": "A policy provision requiring the insured to bear a percentage of the loss."
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text explicitly states that the \"most correct definition of co-insurance\" is \"risk which is covered by multiple insurance companies.\" While the text mentions two other uses of the term, it emphasizes this as the primary definition.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: co-insurance, risk, multiple insurers",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "co-insurance",
+            "risk",
+            "multiple insurers"
+        ],
+        "focal_chunk_index": 264,
+        "context_indices_used": [
+            264,
+            268,
+            265
+        ]
+    },
+    {
+        "question": "According to the text, what is the significance of the \"definitions\" section in an insurance policy?",
+        "options": {
+            "A": "It lists the contact information for filing a claim.",
+            "B": "It outlines the general agreements and exclusions of the policy.",
+            "C": "It explains the payment procedures in case of a claim.",
+            "D": "It defines key terms, which can impact the scope of coverage."
+        },
+        "correct_answer": "D",
+        "explanation": "The text specifically states that the definitions section defines important, legally binding terms used in the policy. It emphasizes that these definitions can restrict or limit coverage, indicating their direct impact on what is and isn't covered. The other options are not mentioned in the provided context.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: definitions, policy terms, coverage, legally binding",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "definitions",
+            "policy terms",
+            "coverage",
+            "legally binding"
+        ],
+        "focal_chunk_index": 202,
+        "context_indices_used": [
+            202,
+            14,
+            201
+        ]
+    },
+    {
+        "question": "A homeowner's insurance policy has an inception date of July 1 st, 2024. The policy covers the home, a detached garage, and personal liability. Coverage for the home and personal liability begins on July 1 st, 2024. However, due to ongoing renovations, coverage for the detached garage begins on September 1 st, 2024. What is the effective date for the detached garage coverage?",
+        "options": {
+            "A": "July 1 st, 2024",
+            "B": "September 1 st, 2024",
+            "C": "July 1 st, 2025",
+            "D": "September 1 st, 2025"
+        },
+        "correct_answer": "B",
+        "explanation": "The effective date is when a specific coverage within a policy begins. The passage explicitly states the detached garage coverage begins on September 1 st, 2024, despite the policy's inception date being July 1 st, 2024.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: inception date, effective date, coverage, policy",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "inception date",
+            "effective date",
+            "coverage",
+            "policy"
+        ],
+        "focal_chunk_index": 256,
+        "context_indices_used": [
+            256,
+            257,
+            259
+        ]
+    },
+    {
+        "question": "A client is looking for homeowners insurance and approaches an agent who represents Company Z. If this agent follows standard practice, what can we definitively say about the insurance options they will present to the client?",
+        "options": {
+            "A": "The agent will offer homeowners insurance policies from several different companies, allowing the client to compare.",
+            "B": "The agent will only offer homeowners insurance policies from Company Z.",
+            "C": "The agent will offer a variety of insurance types (homeowners, auto, life, etc.) but only from Company Z.",
+            "D": "The agent will recommend the client seek quotes directly from insurers to ensure the best possible rate."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explains that an agent \"only from the single insurance company they officially represent.\" In this scenario, the agent represents Company Z, so they would only offer homeowners insurance from that company. Option C is incorrect because while the agent only represents one company, they would only offer policies relevant to the customer's request for *homeowners insurance*. Option A and D contradict the way the text explains an agent's role.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Agent, Insurance Company, Intermediary, Policy",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Agent",
+            "Insurance Company",
+            "Intermediary",
+            "Policy"
+        ],
+        "focal_chunk_index": 9,
+        "context_indices_used": [
+            9,
+            10,
+            6
+        ]
+    },
+    {
+        "question": "Within an insurance policy, what is the primary purpose of \"exclusions\"?",
+        "options": {
+            "A": "To detail modifications made to the main coverage during the policy term.",
+            "B": "To specify the circumstances under which coverage will not be provided.",
+            "C": "To outline the conditions the insured must meet for coverage to remain active.",
+            "D": "To expand coverage beyond what is typically expected under the policy agreement."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that exclusions \"clarifies the coverage which is granted by the policy by describing the specific risk exposure for which no coverage will be provided.\" While exclusions can sometimes add coverage (broadening provisions), their primary function is to define what is *not* covered. Option A describes endorsements, Option C describes conditions, and Option D refers to the less common broadening provisions within exclusions. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Exclusions, Coverage, Policy, Risk Exposure",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Exclusions",
+            "Coverage",
+            "Policy",
+            "Risk Exposure"
+        ],
+        "focal_chunk_index": 203,
+        "context_indices_used": [
+            203,
+            205,
+            175
+        ]
+    },
+    {
+        "question": "In the insurance process, what does the phrase \"holding the pen\" signify?",
+        "options": {
+            "A": "The actuary's role in calculating the premium for a policy.",
+            "B": "The authority to finalize and issue an insurance policy.",
+            "C": "The client's agreement to the terms and conditions of the policy.",
+            "D": "The underwriter's assessment of the risk being insured."
+        },
+        "correct_answer": "B",
+        "explanation": "The provided text explains that \"holding the pen\" refers to the authority to issue the policy. For simple insurance types, the broker \"holds the pen,\" issuing policies based on preset rates. For complex risks, the underwriter at the insurance company \"holds the pen,\" signifying their authority to finalize the policy after assessments and negotiations. Options A, C, and D describe related aspects of the insurance process but do not define the specific meaning of \"holding the pen.\"\nRelevanceScore: 4\nDifficulty: Medium\nKeywords: underwriter, broker, policy, pricing",
+        "relevance_score": 4,
+        "difficulty": "Medium",
+        "keywords": [
+            "underwriter",
+            "broker",
+            "policy",
+            "pricing"
+        ],
+        "focal_chunk_index": 31,
+        "context_indices_used": [
+            31,
+            32,
+            30
+        ]
+    },
+    {
+        "question": "An insured individual cancels their 12-month car insurance policy after 8 months. What portion of their annual premium is typically returned to them as unearned premium?",
+        "options": {
+            "A": "25%",
+            "B": "33%",
+            "C": "50%",
+            "D": "67%"
+        },
+        "correct_answer": "B",
+        "explanation": "The provided text explains that unearned premium is returned pro-rata. Since 8 months out of 12 have passed, 4 months (1/3 of the policy term) remain. Thus, approximately 33% (4/12) of the annual premium is returned.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: unearned premium, pro-rata, cancellation, premium",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "unearned premium",
+            "pro-rata",
+            "cancellation",
+            "premium"
+        ],
+        "focal_chunk_index": 241,
+        "context_indices_used": [
+            241,
+            240,
+            239
+        ]
+    },
+    {
+        "question": "A homeowner's insurance policy has an inception date of July 1 st, 2024. The policy covers the home, a detached garage, and personal liability. The home and personal liability coverage begin on July 1 st, 2024. However, due to ongoing renovations, coverage for the detached garage begins on September 1 st, 2024. What is the effective date for the detached garage coverage?",
+        "options": {
+            "A": "July 1 st, 2024",
+            "B": "September 1 st, 2024",
+            "C": "The date the renovations are completed.",
+            "D": "The policy's expiration date."
+        },
+        "correct_answer": "B",
+        "explanation": "The passage explains that when a policy has multiple coverages, the effective dates for each coverage can differ. While the inception date of the policy is July 1 st, 2024, the provided text explains that individual coverages can have different effective dates. In this scenario, the detached garage coverage becomes effective on September 1 st, 2024. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Inception date, Effective date, Multiple coverages, Policy",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Inception date",
+            "Effective date",
+            "Multiple coverages",
+            "Policy"
+        ],
+        "focal_chunk_index": 257,
+        "context_indices_used": [
+            257,
+            258,
+            259
+        ]
+    },
+    {
+        "question": "An auto insurance policy is nearing its expiration date. Which of the following scenarios accurately reflects the renewal/termination possibilities?",
+        "options": {
+            "A": "The insurer is legally obligated to renew the policy, regardless of the insured's claims history.",
+            "B": "The policy automatically renews unless explicitly terminated by either the insurer or the insured.",
+            "C": "Only the insured has the right to decide whether to renew the policy.",
+            "D": "The insurer can always unilaterally terminate the policy before expiration due to a high number of claims."
+        },
+        "correct_answer": "B",
+        "explanation": "The text states that \"Each policy expires at some point. If the insured or the insurer decides not to renew a policy before the expired date, this policy will not be renewed. Both parties can decide not to renew the policy.\" This implies that renewal isn't automatic but requires agreement, and either party can decline. The example of the insurer not renewing motor insurance due to too many claims demonstrates the insurer's right to not renew. The text also clarifies that certain medical and life coverages have different rules, making option D too broad. RelevanceScore: 5\nDifficulty: Easy\nKeywords: policy expiration, renewal, termination, insurer",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "policy expiration",
+            "renewal",
+            "termination",
+            "insurer"
+        ],
+        "focal_chunk_index": 238,
+        "context_indices_used": [
+            238,
+            239,
+            241
+        ]
+    },
+    {
+        "question": "Which of the following is generally considered a characteristic of commercial lines insurance compared to personal lines insurance?",
+        "options": {
+            "A": "Standardized coverage options.",
+            "B": "Primarily covers individuals.",
+            "C": "More customized policies.",
+            "D": "Always less expensive than personal lines."
+        },
+        "correct_answer": "C",
+        "explanation": "The text states that commercial lines insurance is \"typically more bespoke than personal lines insurance.\" \"Bespoke\" implies customization or tailoring to specific needs, thus indicating that commercial lines policies are more customized. Options A and D are not supported by the text. Option B describes personal lines insurance.\nRelevanceScore: 4\nDifficulty: Easy\nKeywords: Commercial lines, Personal lines, Bespoke, Customized",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "Commercial lines",
+            "Personal lines",
+            "Bespoke",
+            "Customized"
+        ],
+        "focal_chunk_index": 141,
+        "context_indices_used": [
+            141,
+            143,
+            160
+        ]
+    },
+    {
+        "question": "Which of the following is NOT typically covered under a standard home insurance policy without additional endorsements or riders?",
+        "options": {
+            "A": "Damage to the home's structure from a fire.",
+            "B": "Loss of valuables inside the home due to theft.",
+            "C": "Damage caused by a flood.",
+            "D": "Damage from an earthquake."
+        },
+        "correct_answer": "B",
+        "explanation": "The text states that home insurance \"offers financial protection for the structure of your home,\" while coverage \"for valuables inside the property typically requires additional endorsements or riders.\" Options A, C, and D all relate to damage to the structure of the home from covered perils (fire, flood, earthquake). RelevanceScore: 4\nDifficulty: Easy\nKeywords: Home insurance, valuables, endorsements, riders",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "Home insurance",
+            "valuables",
+            "endorsements",
+            "riders"
+        ],
+        "focal_chunk_index": 155,
+        "context_indices_used": [
+            155,
+            154,
+            157
+        ]
+    },
+    {
+        "question": "An insurance policy covers bodily injury, property damage, and personal injury. According to the provided text, how can these coverages be structured within the policy?",
+        "options": {
+            "A": "As three separate policies, each covering one type of risk.",
+            "B": "As one policy with one agreement covering all three types of risks.",
+            "C": "As one policy with three separate agreements, each covering a different type of risk.",
+            "D": "As three separate policies bundled together under a single overarching agreement."
+        },
+        "correct_answer": "C",
+        "explanation": "The text explains that one policy can have multiple agreements (also called sections or subsections), each covering a different type of risk. The example provided lists \"body injury and property damage,\" \"personal injury,\" and \"medical payments\" as three coverages that could be included under separate agreements within a single policy. Options A and D suggest multiple policies, which is contrary to the text's example of *one* policy. Option B describes one agreement covering multiple risks, while the example uses multiple agreements for these distinct coverages. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Policy, Agreement, Coverage, Risk",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Policy",
+            "Agreement",
+            "Coverage",
+            "Risk"
+        ],
+        "focal_chunk_index": 193,
+        "context_indices_used": [
+            193,
+            195,
+            198
+        ]
+    },
+    {
+        "question": "Which of the following is an example of a category within personal lines insurance?",
+        "options": {
+            "A": "Commercial Property Insurance",
+            "B": "Life Insurance",
+            "C": "Business Interruption Insurance",
+            "D": "Workers' Compensation Insurance"
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that \"Within personal lines insurance you will find life insurance and general insurance.\" The other options (Commercial Property, Business Interruption, and Workers' Compensation) are typically associated with insuring businesses, not individuals.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Personal lines, life insurance, general insurance, commercial lines",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Personal lines",
+            "life insurance",
+            "general insurance",
+            "commercial lines"
+        ],
+        "focal_chunk_index": 143,
+        "context_indices_used": [
+            143,
+            140,
+            141
+        ]
+    },
+    {
+        "question": "How do insurance companies generate investment income?",
+        "options": {
+            "A": "By increasing premiums to exceed expenses.",
+            "B": "Through returns from investments such as dividends, interest, and capital gains.",
+            "C": "Primarily through claims payouts and operating expenses.",
+            "D": "By minimizing commissions paid to agents."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that investment income includes returns from dividends, interest, capital gains, and unrealized gains or losses. Option A describes profit generation through premium adjustments, not investment income. Option C describes expenses, not income. Option D relates to managing expenses, not generating investment income.\nRelevanceScore: 4\nDifficulty: Easy\nKeywords: Investment Income, Premiums, Returns, Profits",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "Investment Income",
+            "Premiums",
+            "Returns",
+            "Profits"
+        ],
+        "focal_chunk_index": 17,
+        "context_indices_used": [
+            17,
+            326,
+            16
+        ]
+    },
+    {
+        "question": "Which of the following is NOT typically covered under a standard home insurance policy without additional endorsements?",
+        "options": {
+            "A": "Damage to the home's structure from a fire.",
+            "B": "Loss of valuables inside the home due to theft.",
+            "C": "Repair costs for the home after an earthquake.",
+            "D": "Replacement of the roof after damage from a storm."
+        },
+        "correct_answer": "B",
+        "explanation": "The text states that home insurance \"offers financial protection for the structure of your home,\" and mentions fire, earthquake, and (implicitly, through \"storm\" being a type of \"natural calamity\") storm damage as covered perils. However, it explicitly states that \"coverage for valuables inside the property typically requires additional endorsements or riders.\" RelevanceScore: 4\nDifficulty: Easy\nKeywords: Home insurance, coverage, valuables, endorsements",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "Home insurance",
+            "coverage",
+            "valuables",
+            "endorsements"
+        ],
+        "focal_chunk_index": 152,
+        "context_indices_used": [
+            152,
+            155,
+            154
+        ]
+    },
+    {
+        "question": "A broker uses an intermediary to access an insurer because the intermediary likely has:",
+        "options": {
+            "A": "Less experience with the carrier but better access to multiple carriers.",
+            "B": "More experience with the carrier or better access to the carrier.",
+            "C": "Direct access to reinsurance treaties unavailable to the broker.",
+            "D": "Equivalent experience and access, providing a backup communication channel."
+        },
+        "correct_answer": "B",
+        "explanation": "The text states the intermediary is used when they have \"more experience with or better access to the actual carrier.\" Options A and D contradict this directly. Option C introduces \"reinsurance treaties,\" a concept not present in the provided text. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Broker, Intermediary, Insurer, Wholesale insurance",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Broker",
+            "Intermediary",
+            "Insurer",
+            "Wholesale insurance"
+        ],
+        "focal_chunk_index": 305,
+        "context_indices_used": [
+            305,
+            309,
+            297
+        ]
+    },
+    {
+        "question": "An underwriter structures a policy with separate agreements for \"Bodily Injury and Property Damage,\" \"Personal Injury,\" and \"Medical Payments.\" How are these agreements related to the overall policy?",
+        "options": {
+            "A": "They are independent policies bundled together for convenience.",
+            "B": "They represent different types of coverage within a single policy.",
+            "C": "They are endorsements modifying the primary coverage of a separate policy.",
+            "D": "They are alternative policy options from which the insured can choose one."
+        },
+        "correct_answer": "B",
+        "explanation": "The text clearly states that multiple agreements, also called sections or subsections, can exist *within* one policy. It uses the example of \"Bodily Injury and Property Damage,\" \"Personal Injury,\" and \"Medical Payments\" as different coverages offered under a single \"Commercial General Liability\" policy or any other type of policy. This shows that the agreements are not separate policies (A), endorsements (C), or alternative choices (D), but distinct coverage types *within* the same policy. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Policy, Coverage, Agreement, Sections",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Policy",
+            "Coverage",
+            "Agreement",
+            "Sections"
+        ],
+        "focal_chunk_index": 198,
+        "context_indices_used": [
+            198,
+            194,
+            195
+        ]
+    },
+    {
+        "question": "Which of the following is covered under Cargo insurance within marine insurance?",
+        "options": {
+            "A": "Damage to the ship transporting goods.",
+            "B": "Damage to an oil rig during transportation.",
+            "C": "Goods damaged during a specified portion of the transport process.",
+            "D": "Legal liabilities arising from an accident during transport."
+        },
+        "correct_answer": "C",
+        "explanation": "The text defines Cargo insurance as covering \"damage to the cargo being shipped between 2 well-defined points in the transport process.\" Option A describes Hull/inland marine insurance. Option B refers to a fixed structure (oil rig) and its potential damage, not cargo damage. Option D describes Liability coverage. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Marine insurance, Cargo, Hull/inland marine, Liability",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Marine insurance",
+            "Cargo",
+            "Hull/inland marine",
+            "Liability"
+        ],
+        "focal_chunk_index": 230,
+        "context_indices_used": [
+            230,
+            166,
+            231
+        ]
+    },
+    {
+        "question": "An insurer offers a \"Commercial General Liability\" policy containing coverage for bodily injury, property damage, and personal injury. According to the text, why might these coverages be bundled together under a single policy?",
+        "options": {
+            "A": "To reduce the administrative burden of managing multiple separate policies.",
+            "B": "Because market trends indicate these coverages are typically offered as a package.",
+            "C": "To ensure the insured has comprehensive coverage for all possible risks.",
+            "D": "Because these coverages are legally required to be offered together."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that an underwriter might package coverages together under a single policy because \"coverage for this set of risks typically in the market is being offered as a package.\" The other options are not supported by the provided text. RelevanceScore: 4\nDifficulty: Easy\nKeywords: coverage, policy, underwriter, market trends",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "coverage",
+            "policy",
+            "underwriter",
+            "market trends"
+        ],
+        "focal_chunk_index": 194,
+        "context_indices_used": [
+            194,
+            198,
+            199
+        ]
+    },
+    {
+        "question": "Which of the following best describes a \"Treaty per occurrence\" insurance policy?",
+        "options": {
+            "A": "A single policy covering a single agreement with multiple types of risks.",
+            "B": "A single policy covering multiple agreements affected by a single event.",
+            "C": "A single policy covering only one specific, pre-defined type of risk.",
+            "D": "Multiple policies, each covering a single agreement, bundled together."
+        },
+        "correct_answer": "B",
+        "explanation": "The text defines \"Treaty per occurrence\" as protecting \"multiple policies affected by the occurrence of a single event.\" This aligns with option B, which describes a single policy covering multiple agreements affected by a single event. Option A describes a single policy with multiple risks but doesn't mention the crucial element of a shared event. Option C describes a basic single-risk policy, while Option D describes a bundle of individual policies, neither of which matches the \"Treaty per occurrence\" definition. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Treaty per occurrence, policy, agreement, risk",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Treaty per occurrence",
+            "policy",
+            "agreement",
+            "risk"
+        ],
+        "focal_chunk_index": 119,
+        "context_indices_used": [
+            119,
+            193,
+            57
+        ]
+    },
+    {
+        "question": "Which of the following is NOT a main category of insurance described in the text?",
+        "options": {
+            "A": "Commercial lines insurance",
+            "B": "Personal lines insurance",
+            "C": "General insurance",
+            "D": "Health insurance"
+        },
+        "correct_answer": "D",
+        "explanation": "The text mentions personal lines insurance, which includes life and general insurance, and commercial lines insurance, which covers businesses. Health insurance is not mentioned as a main category.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: insurance categories, personal lines, commercial lines",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "insurance categories",
+            "personal lines",
+            "commercial lines"
+        ],
+        "focal_chunk_index": 140,
+        "context_indices_used": [
+            140,
+            143,
+            142
+        ]
+    },
+    {
+        "question": "In the context of insurance premium dispersion, which entity typically handles sending invoices for the premium payment to the various client locations or entities?",
+        "options": {
+            "A": "The client's internal accounting department.",
+            "B": "A third-party payment processor contracted by the client.",
+            "C": "Either a broker or an insurer.",
+            "D": "Multiple broker entities, each responsible for a portion of the premium."
+        },
+        "correct_answer": "C",
+        "explanation": "The text states, \"As mentioned above, a broker or an insurer can send an invoice to multiple entities of a client, which we called \u201cdispersing the premium.\u201d\" It also explicitly clarifies that premium dispersion is NOT about dividing the premium among different broker entities. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Premium, Dispersion, Broker, Insurer",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Premium",
+            "Dispersion",
+            "Broker",
+            "Insurer"
+        ],
+        "focal_chunk_index": 276,
+        "context_indices_used": [
+            276,
+            278,
+            274
+        ]
+    },
+    {
+        "question": "In an insurance policy where the primary client is a head office insuring a chain of stores, but the coverage doesn't apply to the head office itself, how might the premium payment be handled?",
+        "options": {
+            "A": "The head office pays the entire premium and is then reimbursed by each store.",
+            "B": "The premium is divided among the stores based on a factor like store size, and each store is invoiced separately.",
+            "C": "The head office receives the invoice for the total premium, even though the coverage doesn't apply to them, and pays the full amount.",
+            "D": "A multi-client policy is created where the head office and each store receive separate invoices for the same coverage."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explains that when the primary client (head office) isn't covered, \"the total premium across those different stores can be spread out... using a certain key, for example, store space.\" This indicates that the premium is divided among the stores based on a relevant factor. RelevanceScore: 5\nDifficulty: Medium\nKeywords: primary client, linked entities, premium, multi-client policy",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "primary client",
+            "linked entities",
+            "premium",
+            "multi-client policy"
+        ],
+        "focal_chunk_index": 280,
+        "context_indices_used": [
+            280,
+            283,
+            279
+        ]
+    },
+    {
+        "question": "In insurance terminology, what does the \"policy header\" primarily indicate?",
+        "options": {
+            "A": "The specific clauses and conditions related to third-party liability coverage within the policy.",
+            "B": "The comprehensive list of all risks covered, including secondary or supplementary coverages.",
+            "C": "The main category or type of insurance coverage provided by the policy.",
+            "D": "The detailed breakdown of premium calculations and payment schedules."
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text consistently defines \"policy header\" as the main insurance risk covered or the title/label of what the insurance is mainly about. Examples like \"motor policy\" and \"home insurance\" are given to illustrate this. The other options describe aspects that might be *part* of a policy but are not its header.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: policy header, insurance coverage, motor policy, home insurance",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "policy header",
+            "insurance coverage",
+            "motor policy",
+            "home insurance"
+        ],
+        "focal_chunk_index": 185,
+        "context_indices_used": [
+            185,
+            179,
+            187
+        ]
+    },
+    {
+        "question": "An insurer wants to reinsure only the risk of fire damage across its homeowner policies. Which type of reinsurance treaty is most appropriate for this purpose?",
+        "options": {
+            "A": "Per occurrence XOL treaty",
+            "B": "Per risk XOL treaty",
+            "C": "Facultative reinsurance treaty",
+            "D": "Treaty reinsurance for all perils"
+        },
+        "correct_answer": "B",
+        "explanation": "The text explains that a \"Per risk XOL treaty protects against individual risk classes,\" allowing the insurer (cedent) to reinsure a \"specific risk class\" like fire. A per occurrence treaty covers losses from a single event affecting multiple policies, while the text doesn't define facultative or \"treaty reinsurance for all perils.\"\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Per risk XOL, reinsurance, risk class, treaty",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Per risk XOL",
+            "reinsurance",
+            "risk class",
+            "treaty"
+        ],
+        "focal_chunk_index": 124,
+        "context_indices_used": [
+            124,
+            123,
+            120
+        ]
+    },
+    {
+        "question": "Which of the following best describes the function of the \"Agreements\" section in a home insurance policy?",
+        "options": {
+            "A": "It lists contact information for filing a claim.",
+            "B": "It specifies the premium payment schedule and methods.",
+            "C": "It details the risks covered by the policy, such as water and fire damage.",
+            "D": "It provides a summary of the insured's personal information and property details."
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text explains that the \"Agreements\" section, also referred to as \"coverage,\" details what the insurance company has agreed to pay for in the event of a claim. It specifically mentions examples like water and fire damage as types of risks covered. Option A relates to the claims process but not the Agreements section itself. Option B deals with payment terms, which are not discussed in this context. Option D describes information typically found in the declarations section, not the agreements section.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Agreements, Coverage, Risk, Policy",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Agreements",
+            "Coverage",
+            "Risk",
+            "Policy"
+        ],
+        "focal_chunk_index": 189,
+        "context_indices_used": [
+            189,
+            188,
+            191
+        ]
+    },
+    {
+        "question": "What key insight does the loss ratio provide for insurance companies, as described in the text?",
+        "options": {
+            "A": "It measures the percentage of premiums invested in new business ventures.",
+            "B": "It indicates the proportion of administrative expenses relative to earned premiums.",
+            "C": "It reveals the percentage of premiums paid out as claims.",
+            "D": "It reflects the ratio of customer acquisition costs to total revenue."
+        },
+        "correct_answer": "C",
+        "explanation": "The text explicitly states, \"In simple terms, the loss ratio shows the percentage of premiums paid out as claims by the insurer.\" Options A, B, and D relate to other financial aspects of a business but are not related to the loss ratio as defined in the provided text.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Loss ratio, claims, premiums, profitability",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Loss ratio",
+            "claims",
+            "premiums",
+            "profitability"
+        ],
+        "focal_chunk_index": 347,
+        "context_indices_used": [
+            347,
+            319,
+            330
+        ]
+    },
+    {
+        "question": "How does a reinsurer typically assess the risk when an insurance company seeks reinsurance?",
+        "options": {
+            "A": "By evaluating the individual risk the insurance company wants to cede, mirroring the insurer's own underwriting process.",
+            "B": "By considering the overall portfolio or sub-portfolio of risks being transferred, analyzing combined premiums and past loss development.",
+            "C": "By solely relying on the insurance company's initial risk assessment and pricing.",
+            "D": "By negotiating a reinsurance premium based on the broker's independent risk evaluation."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that reinsurers evaluate risk \"at the portfolio or sub-portfolio level looking at the combined premium and past loss development,\" rather than individual risks. Options A, C, and D contradict this process as described in the text.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Reinsurance, Risk Assessment, Portfolio, Premium",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Reinsurance",
+            "Risk Assessment",
+            "Portfolio",
+            "Premium"
+        ],
+        "focal_chunk_index": 128,
+        "context_indices_used": [
+            128,
+            63,
+            98
+        ]
+    },
+    {
+        "question": "In the context of open cover marine insurance for a company like Toyota shipping cars, what is the function of a marine certificate?",
+        "options": {
+            "A": "It replaces the need for an open cover policy entirely.",
+            "B": "It sets the terms and premium for the overall open cover agreement.",
+            "C": "It provides evidence of insurance for a specific shipment under the pre-agreed open cover policy.",
+            "D": "It allows the shipping company to change the terms of the open cover policy for each individual shipment."
+        },
+        "correct_answer": "C",
+        "explanation": "The passage explains that an open cover policy is a pre-arranged agreement between the insured (like Toyota) and the underwriter. When a specific shipment is ready, a marine certificate is issued. This certificate \"ensures that the cargo is insured while in transit and is *supported by* an insurance policy \u2013 which is the open cover.\" This means the certificate is *evidence* of insurance for a specific shipment, not a replacement for the overarching open cover policy. The open cover itself sets the terms and premiums, not the certificate. RelevanceScore: 5\nDifficulty: Medium\nKeywords: Open Cover, Marine Certificate, Cargo Insurance, Premium",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "Open Cover",
+            "Marine Certificate",
+            "Cargo Insurance",
+            "Premium"
+        ],
+        "focal_chunk_index": 234,
+        "context_indices_used": [
+            234,
+            236,
+            237
+        ]
+    },
+    {
+        "question": "How does using an insurance broker typically affect the premium a client pays compared to buying directly from an insurer?",
+        "options": {
+            "A": "Brokers always result in higher premiums due to their commission.",
+            "B": "Brokers always result in lower premiums due to their negotiating power.",
+            "C": "Brokers often lead to lower premiums due to their market influence and ability to negotiate, but pricing dynamics can vary.",
+            "D": "Brokers have no impact on premiums; the price is the same regardless of the purchase method."
+        },
+        "correct_answer": "C",
+        "explanation": "The text explains that while insurers pay commissions to brokers, this doesn't always mean higher premiums for clients. Brokers can often negotiate lower premiums than what insurers offer directly. The text highlights that brokers can pressure insurers to offer lower rates and leverage their market influence for competitive pricing, although it also acknowledges that \"pricing dynamics can vary.\" RelevanceScore: 5\nDifficulty: Easy\nKeywords: Broker, Premium, Insurer, Commission",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Broker",
+            "Premium",
+            "Insurer",
+            "Commission"
+        ],
+        "focal_chunk_index": 23,
+        "context_indices_used": [
+            23,
+            24,
+            29
+        ]
+    },
+    {
+        "question": "Which type of insurance would typically cover the financial burden of medical expenses incurred due to an illness contracted while traveling abroad?",
+        "options": {
+            "A": "Home insurance",
+            "B": "Travel insurance",
+            "C": "Health insurance, as it covers all medical expenses regardless of location.",
+            "D": "All of the above would provide coverage."
+        },
+        "correct_answer": "B",
+        "explanation": "The text specifically states that travel insurance covers \"financial liabilities arising out of medical... emergencies related to your travel abroad such as... emergency medical expenses.\" While health insurance covers medical care costs generally, the context emphasizes travel insurance for medical costs *incurred while traveling*. Home insurance relates to property damage, not medical emergencies.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Travel insurance, Medical expenses, Coverage, Financial liabilities",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Travel insurance",
+            "Medical expenses",
+            "Coverage",
+            "Financial liabilities"
+        ],
+        "focal_chunk_index": 153,
+        "context_indices_used": [
+            153,
+            146,
+            154
+        ]
+    },
+    {
+        "question": "Which of the following is specifically covered under the basic definition of home insurance provided?",
+        "options": {
+            "A": "Replacement of a stolen television.",
+            "B": "Repair costs for the house structure damaged by a flood.",
+            "C": "Compensation for injuries to a guest inside the insured home.",
+            "D": "Damage to personal belongings during a house fire."
+        },
+        "correct_answer": "B",
+        "explanation": "The text defines home insurance as covering \"damage to your home due to natural calamities, man-made disasters, or other threats.\" Flood damage to the house structure fits this definition. Options A and D relate to the *contents* of the home, which are covered separately (content insurance or additional endorsements/riders). Option C relates to liability for injuries, not directly to the house structure itself, hence it falls outside the basic home insurance definition provided. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Home insurance, content insurance, coverage, damage",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Home insurance",
+            "content insurance",
+            "coverage",
+            "damage"
+        ],
+        "focal_chunk_index": 158,
+        "context_indices_used": [
+            158,
+            155,
+            154
+        ]
+    },
+    {
+        "question": "Which of the following is NOT a principal section typically found within an insurance policy document as described in the text?",
+        "options": {
+            "A": "Declarations",
+            "B": "Agreements",
+            "C": "Definitions",
+            "D": "Endorsements"
+        },
+        "correct_answer": "D",
+        "explanation": "The text explicitly lists \"Declarations,\" \"Agreements,\" and \"Definitions\" as sections within a policy document. \"Endorsements,\" while a common part of insurance policies, is not mentioned within this provided text. RelevanceScore: 5\nDifficulty: Easy\nKeywords: policy structure, declarations, agreements, definitions",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "policy structure",
+            "declarations",
+            "agreements",
+            "definitions"
+        ],
+        "focal_chunk_index": 177,
+        "context_indices_used": [
+            177,
+            186,
+            174
+        ]
+    },
+    {
+        "question": "How do insurance companies generate income beyond the premiums they collect?",
+        "options": {
+            "A": "By offering additional financial services like loans and mortgages.",
+            "B": "By increasing the sales price of insurance policies annually.",
+            "C": "By investing the collected premiums to earn returns from sources like dividends and interest.",
+            "D": "Through government subsidies and tax breaks specifically for the insurance industry."
+        },
+        "correct_answer": "C",
+        "explanation": "The text explicitly states that insurance companies invest the premiums they receive to generate \"investment income.\" This income includes returns from dividends, interest, capital gains, and unrealized gains or losses. The other options are not mentioned in the provided text.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Investment Income, Premiums, Insurance Float, Profits",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Investment Income",
+            "Premiums",
+            "Insurance Float",
+            "Profits"
+        ],
+        "focal_chunk_index": 326,
+        "context_indices_used": [
+            326,
+            17,
+            15
+        ]
+    },
+    {
+        "question": "An underwriter agrees to insure a warehouse for a premium of $10,000, reduced from $12,000, on the condition that specific fire safety upgrades are implemented and certified within two months. What is the primary reason for requiring these upgrades?",
+        "options": {
+            "A": "To increase the warehouse's value and justify the higher initial premium of $12,000.",
+            "B": "To allow the insurer to collect the full $12,000 premium over time.",
+            "C": "To mitigate the risk of fire and potentially reduce the likelihood or severity of a future claim.",
+            "D": "To ensure the warehouse complies with local fire codes before the policy inception."
+        },
+        "correct_answer": "C",
+        "explanation": "The text states the premium reduction is conditional upon \"fire safety upgrades.\" This implies the upgrades are intended to lessen fire risk, thus reducing the chance of a claim or its severity, which benefits the insurer. The other options are not supported by the text. RelevanceScore: 4\nDifficulty: Easy\nKeywords: premium, underwriter, risk mitigation, fire safety upgrades",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "premium",
+            "underwriter",
+            "risk mitigation",
+            "fire safety upgrades"
+        ],
+        "focal_chunk_index": 215,
+        "context_indices_used": [
+            215,
+            213,
+            135
+        ]
+    },
+    {
+        "question": "What distinguishes an Aggregate Excess of Loss (XOL) treaty from a standard Excess of Loss (XOL) treaty?",
+        "options": {
+            "A": "An Aggregate XOL covers individual losses exceeding a retention, while a standard XOL covers total losses across a book exceeding a retention.",
+            "B": "An Aggregate XOL covers total losses across a book exceeding a retention, while a standard XOL covers individual losses exceeding a retention.",
+            "C": "An Aggregate XOL applies only to property insurance, while a standard XOL applies to all lines of insurance.",
+            "D": "An Aggregate XOL is triggered by a single large loss, while a standard XOL is triggered by accumulated smaller losses."
+        },
+        "correct_answer": "A",
+        "explanation": "The provided text defines an Aggregate XOL as covering \"all the losses that exceed a predetermined aggregate retention... occurring during a certain time period.\" This implies it considers the accumulation of losses over a period. The standard XOL definition specifies that it \"will only kick in when total losses across the whole book go above a predetermined level.\" This distinction focuses on the collective assessment of losses across a portfolio (book of business) in a standard XOL rather than the aggregated losses over a period for an aggregate XOL. RelevanceScore: 5\nDifficulty: Medium\nKeywords: Aggregate XOL, Excess of Loss, Reinsurance Treaty, Retention",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "Aggregate XOL",
+            "Excess of Loss",
+            "Reinsurance Treaty",
+            "Retention"
+        ],
+        "focal_chunk_index": 121,
+        "context_indices_used": [
+            121,
+            115,
+            132
+        ]
+    },
+    {
+        "question": "An insurer has a pro-rata reinsurance treaty covering 75% of their home insurance policies up to a \u20ac100 million premium limit. If the insurer writes \u20ac150 million worth of home insurance premiums, what portion of the *next* \u20ac10 million in claims would the reinsurer be responsible for under this *specific* treaty?",
+        "options": {
+            "A": "\u20ac7. 5 million",
+            "B": "\u20ac10 million",
+            "C": "\u20ac2. 5 million",
+            "D": "\u20ac0"
+        },
+        "correct_answer": "D",
+        "explanation": "The provided text explains that the reinsurance treaty covers 75% of the insurer's home insurance policies up to a \u20ac100 million premium limit. Any amount beyond that initial \u20ac100 million, such as the additional \u20ac50 million mentioned in the example (\u20ac150 million total - \u20ac100 million covered), is *not* covered under the described treaty unless a separate arrangement is made. Therefore, the reinsurer has no responsibility for claims arising from premiums beyond the \u20ac100 million limit covered by the treaty. The question asks specifically about the coverage of claims from the *next* \u20ac10 million of premiums *under the specified treaty*, making the answer \u20ac0. RelevanceScore: 5\nDifficulty: Medium\nKeywords: pro-rata treaty, reinsurance, premium limit, claims",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "pro-rata treaty",
+            "reinsurance",
+            "premium limit",
+            "claims"
+        ],
+        "focal_chunk_index": 104,
+        "context_indices_used": [
+            104,
+            112,
+            106
+        ]
+    },
+    {
+        "question": "How do insurance companies generate profit?",
+        "options": {
+            "A": "Solely through the collection of insurance premiums.",
+            "B": "Primarily by investing premiums (the float) and earning returns, supplemented by underwriting income.",
+            "C": "Exclusively through underwriting income, which represents the difference between premiums earned and claims paid.",
+            "D": "Primarily through government subsidies and investment in high-risk, high-reward ventures."
+        },
+        "correct_answer": "B",
+        "explanation": "The text states that insurers make money by investing collected premiums (referred to as the insurance float or positive working capital) to generate investment income. While premiums are the initial source of funds, it's the investment of these premiums that drives profitability. The additional text clarifies that investment income includes returns from dividends, interest, and capital gains. Option B also correctly includes the concept that underwriting income supplements these investment returns.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: gross premium, insurance float, investment income",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "gross premium",
+            "insurance float",
+            "investment income"
+        ],
+        "focal_chunk_index": 15,
+        "context_indices_used": [
+            15,
+            326,
+            16
+        ]
+    },
+    {
+        "question": "If a car insured for $20,000 with a $1,000 deductible is involved in an accident resulting in $22,000 worth of damage, how much would the insurer pay?",
+        "options": {
+            "A": "$22,000",
+            "B": "$21,000",
+            "C": "$20,000",
+            "D": "$19,000"
+        },
+        "correct_answer": "C",
+        "explanation": "The sum insured/policy limit is the maximum amount the insurer will pay. In this case, it's $20,000. While the total damage is $22,000, the policy only covers up to $20,000. The deductible applies to the amount the insurer pays (so, after policy limits), not the initial total cost of the damage. The fact that the total damage cost is $22,000 is not relevant. In no instance, according to the provided text, can the insurer pay more than $20,000. RelevanceScore: 5\nDifficulty: Medium\nKeywords: sum insured, deductible, policy limit, coverage limit",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "sum insured",
+            "deductible",
+            "policy limit",
+            "coverage limit"
+        ],
+        "focal_chunk_index": 181,
+        "context_indices_used": [
+            181,
+            183,
+            180
+        ]
+    },
+    {
+        "question": "A large corporate office building in London is being insured. Which type of reinsurance is most likely to be used in this scenario, and why?",
+        "options": {
+            "A": "Treaty reinsurance, because it covers multiple similar risks, streamlining the process for the insurer.",
+            "B": "Facultative reinsurance, because it allows for a dedicated risk assessment of the specific building.",
+            "C": "Proportional reinsurance, because it shares the risk and premium proportionally between the insurer and reinsurer.",
+            "D": "Excess-of-loss reinsurance, because it covers losses beyond a pre-determined limit, protecting the insurer from catastrophic losses."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explains that facultative reinsurance is used for specific, identifiable risks like a particular office building, allowing for a dedicated risk assessment. Treaty reinsurance covers a broader class of risks, not individual properties. While proportional and excess-of-loss are reinsurance types, the provided text emphasizes the individualized nature of the risk assessment making facultative the most appropriate choice.\nRelevanceScore: 5\nDifficulty: Medium\nKeywords: Facultative reinsurance, risk assessment, office building, reinsurance types",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "Facultative reinsurance",
+            "risk assessment",
+            "office building",
+            "reinsurance types"
+        ],
+        "focal_chunk_index": 133,
+        "context_indices_used": [
+            133,
+            131,
+            127
+        ]
+    },
+    {
+        "question": "How does a captive insurance entity typically impact the premiums paid to a traditional insurer for coverage above the initial layer of risk?",
+        "options": {
+            "A": "It increases the premiums due to the added complexity of coordinating with the captive.",
+            "B": "It has no impact on the premiums as the two coverage layers are independent.",
+            "C": "It decreases the premiums since the captive absorbs the initial risk layer.",
+            "D": "It initially decreases the premiums but then leads to higher premiums in subsequent years as the captive's reserves deplete."
+        },
+        "correct_answer": "C",
+        "explanation": "The text states that because the company with the captive insurer has reserves to cover the first layer of risk, \"the yearly premium amount quoted by any insurer to cover the remaining risk will be significantly reduced.\" RelevanceScore: 5\nDifficulty: Medium\nKeywords: captive insurance, premiums, risk, reserves",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "captive insurance",
+            "premiums",
+            "risk",
+            "reserves"
+        ],
+        "focal_chunk_index": 66,
+        "context_indices_used": [
+            66,
+            72,
+            74
+        ]
+    },
+    {
+        "question": "When a broker lacks direct access to an insurance company and uses an intermediary to place a risk, where is the ultimate risk-bearing entity's information recorded?",
+        "options": {
+            "A": "In the standard insurer information fields of the main policy table.",
+            "B": "It's not recorded; only the intermediary's details are kept.",
+            "C": "In a separate, linked table often called the \"actual carrier placement\" table.",
+            "D": "The broker retains this information and doesn't enter it into the system."
+        },
+        "correct_answer": "C",
+        "explanation": "The text explicitly states that when a broker uses an intermediary, the actual insurer or reinsurer with whom the business is placed is recorded in a separate, linked table, sometimes called the \"actual carrier placement\" table. The intermediary's information is entered into the typical insurer fields, but the ultimate risk holder is tracked separately. RelevanceScore: 5\nDifficulty: Medium\nKeywords: Actual Carrier Placement, Broker, Insurer, Intermediary",
+        "relevance_score": 5,
+        "difficulty": "Medium",
+        "keywords": [
+            "Actual Carrier Placement",
+            "Broker",
+            "Insurer",
+            "Intermediary"
+        ],
+        "focal_chunk_index": 308,
+        "context_indices_used": [
+            308,
+            302,
+            307
+        ]
+    },
+    {
+        "question": "What is the primary purpose of endorsements in an insurance policy?",
+        "options": {
+            "A": "To define specific risk exposures for which coverage will not be provided.",
+            "B": "To outline the conditions that must be met by the insured for coverage to be effective.",
+            "C": "To modify the main coverage of the policy, sometimes reflecting mid-term adjustments.",
+            "D": "To unconditionally add new clauses to the policy without altering existing terms."
+        },
+        "correct_answer": "C",
+        "explanation": "The text defines endorsements as a section describing \"modifications which have been made to the main coverage,\" and also refers to them as \"mid-term adjustments.\" Option A describes exclusions, Option B describes conditions, and Option D describes a specific type of change (unconditional additions) rather than the overall purpose of endorsements.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Endorsements, Policy Modifications, Mid-term Adjustments, Clauses",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Endorsements",
+            "Policy Modifications",
+            "Mid-term Adjustments",
+            "Clauses"
+        ],
+        "focal_chunk_index": 225,
+        "context_indices_used": [
+            225,
+            224,
+            175
+        ]
+    },
+    {
+        "question": "What is the term for an insurance policy taken out by one insurer with another insurer to reduce risk exposure?",
+        "options": {
+            "A": "Insurance policy",
+            "B": "Retrocession policy",
+            "C": "Reinsurance policy",
+            "D": "Client policy"
+        },
+        "correct_answer": "C",
+        "explanation": "The text defines a \"reinsurance policy\" as a policy between an insurer and a reinsurer specifically for the purpose of reducing the first insurer's risk exposure. An \"insurance policy\" is between a client and an insurance company, while a \"retrocession policy\" is between reinsurers. \"Client policy\" is not a defined term in the provided text.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Reinsurance policy, Insurer, Reinsurer, Risk",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Reinsurance policy",
+            "Insurer",
+            "Reinsurer",
+            "Risk"
+        ],
+        "focal_chunk_index": 58,
+        "context_indices_used": [
+            58,
+            62,
+            41
+        ]
+    },
+    {
+        "question": "Which of the following scenarios is an example of an exclusion as described in the text?",
+        "options": {
+            "A": "An insurer chooses not to renew a motor insurance policy due to excessive claims.",
+            "B": "A client cancels their life insurance policy.",
+            "C": "A driver is involved in an accident while intoxicated, and their motor insurance claim is denied.",
+            "D": "An insurer terminates a client's medical coverage due to non-payment."
+        },
+        "correct_answer": "C",
+        "explanation": "The text provides the example of an intoxicated driver causing an accident and being excluded from coverage. Option A describes non-renewal, which is different from an exclusion within a policy. Option B describes policy termination by the insured, not the insurer based on an exclusion. Option D isn't mentioned in the text at all. RelevanceScore: 5\nDifficulty: Easy\nKeywords: exclusions, policy, coverage, claim",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "exclusions",
+            "policy",
+            "coverage",
+            "claim"
+        ],
+        "focal_chunk_index": 204,
+        "context_indices_used": [
+            204,
+            239,
+            202
+        ]
+    },
+    {
+        "question": "In which of the following scenarios does the broker \"hold the pen\" in issuing an insurance policy?",
+        "options": {
+            "A": "Insuring a large commercial factory with specialized equipment.",
+            "B": "A complex insurance policy involving multiple types of coverage and high liability limits.",
+            "C": "A standard homeowner's insurance policy with pre-set rates.",
+            "D": "A case where risk assessment and negotiation with the insurer are required."
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text states that for simple insurance types like home insurance, pricing is preset, and the broker can issue the policy without interacting with the insurer for that specific policy \u2013 this is referred to as the broker \"holding the pen.\" Options A, B, and D describe situations where more complex risks are involved, requiring underwriter involvement and therefore the underwriter \"holds the pen.\"\nRelevanceScore: 4\nDifficulty: Easy\nKeywords: Broker, Underwriter, Policy, Risk",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "Broker",
+            "Underwriter",
+            "Policy",
+            "Risk"
+        ],
+        "focal_chunk_index": 30,
+        "context_indices_used": [
+            30,
+            77,
+            31
+        ]
+    },
+    {
+        "question": "In agency billing, if a client pays a gross premium of $1200 to a broker, and the broker's commission is 10%, what is the net premium received by the insurer?",
+        "options": {
+            "A": "$120",
+            "B": "$1080",
+            "C": "$1320",
+            "D": "$1200"
+        },
+        "correct_answer": "B",
+        "explanation": "The provided text explains that in agency billing, the broker receives the gross premium from the client and keeps their commission before passing the remainder (net premium) to the insurer. The broker's commission is 10% of $1200, which is $120. The net premium is the gross premium minus the commission: $1200 - $120 = $1080.\nRelevanceScore: 5\nDifficulty: Easy\nKeywords: Commission, Agency Billing, Gross Premium, Net Premium",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Commission",
+            "Agency Billing",
+            "Gross Premium",
+            "Net Premium"
+        ],
+        "focal_chunk_index": 19,
+        "context_indices_used": [
+            19,
+            273,
+            246
+        ]
+    },
+    {
+        "question": "Which of the following statements best describes the relationship between commissions and insurance policies?",
+        "options": {
+            "A": "Commissions are paid by the insured to the insurer as part of the premium.",
+            "B": "Commissions are paid by the insurer to the agent/broker and are tied to the sale of a policy.",
+            "C": "Commissions are unrelated to insurance policies and represent separate consulting fees.",
+            "D": "Commissions are paid by the agent/broker to the insurer to secure a policy for the client."
+        },
+        "correct_answer": "B",
+        "explanation": "Both provided paragraphs clearly state that commissions are paid by the *insurer* to the *agent/broker* specifically for selling or \"placing\" a policy. Option A incorrectly describes the flow of commission. Option C contradicts the text's explicit linking of commissions to policies. Option D reverses the direction of payment described in the context. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Commission, Broker, Agent, Policy",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Commission",
+            "Broker",
+            "Agent",
+            "Policy"
+        ],
+        "focal_chunk_index": 273,
+        "context_indices_used": [
+            273,
+            19,
+            269
+        ]
+    },
+    {
+        "question": "In a wholesale insurance arrangement, to whom does the initial broker typically send the invoice?",
+        "options": {
+            "A": "The end client who purchases the insurance policy.",
+            "B": "The insurance carrier (insurer) providing the policy.",
+            "C": "Another insurance broker who will ultimately sell the policy to the client.",
+            "D": "A regulatory body overseeing insurance transactions."
+        },
+        "correct_answer": "C",
+        "explanation": "The provided text explicitly states that in wholesale insurance, \"the invoice of the broker goes to the other broker,\" meaning the invoice is sent to the broker who will then sell the insurance to their client, not directly to the client. RelevanceScore: 5\nDifficulty: Easy\nKeywords: Wholesale insurance, 3 rd party broker, Invoice, Commission",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Wholesale insurance",
+            "3 rd party broker",
+            "Invoice",
+            "Commission"
+        ],
+        "focal_chunk_index": 297,
+        "context_indices_used": [
+            297,
+            298,
+            300
+        ]
+    },
+    {
+        "question": "In the insurance process described, what is the role of the pricing actuary in supporting the underwriter?",
+        "options": {
+            "A": "To negotiate directly with the client regarding policy terms and premiums.",
+            "B": "To build pricing models that help determine risk and premium pricing.",
+            "C": "To assess and manage the reserves needed to cover potential claims payouts.",
+            "D": "To act as an intermediary between the client and the insurance company."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that the pricing actuary \"builds pricing models across different lines of business\" which the underwriter then uses to \"decide whether to cover a risk and properly price it.\" Option A is incorrect as the text describes the relationship manager (or broker) as the one interacting with the client. Option C describes the role of a reserving actuary. Option D describes the function of a broker or intermediary.\nRelevanceScore: 4\nDifficulty: Easy\nKeywords: pricing actuary, underwriter, pricing models, risk",
+        "relevance_score": 4,
+        "difficulty": "Easy",
+        "keywords": [
+            "pricing actuary",
+            "underwriter",
+            "pricing models",
+            "risk"
+        ],
+        "focal_chunk_index": 38,
+        "context_indices_used": [
+            38,
+            32,
+            48
+        ]
+    },
+    {
+        "question": "According to the text, what are two reasons a broker might distribute a client's risk across multiple insurers?",
+        "options": {
+            "A": "To simplify the insurance policy documentation and to spread the administrative workload.",
+            "B": "To guarantee full coverage for all sub-risks and to potentially lower the total premium.",
+            "C": "To comply with regulatory requirements for risk diversification and to avoid conflicts of interest.",
+            "D": "To build stronger relationships with a wider range of insurers and to increase brokerage commissions."
+        },
+        "correct_answer": "B",
+        "explanation": "The text explicitly states that distributing risk can help ensure placement for all the (sub) risks the client wants covered. It also mentions that using multiple insurers can help achieve a better agreement on premium and risk acceptance, implying a potential reduction in the overall premium quote compared to using a single insurer. RelevanceScore: 5 Difficulty: Easy Keywords: Broker, Risk Transfer, Premium, Insurers",
+        "relevance_score": 5,
+        "difficulty": "Easy",
+        "keywords": [
+            "Broker",
+            "Risk Transfer",
+            "Premium",
+            "Insurers"
+        ],
+        "focal_chunk_index": 82,
+        "context_indices_used": [
+            82,
+            77,
+            65
+        ]
+    }
+]

@@ -1,0 +1,6 @@
+# .gitignore
+py311_env/
+__pycache__/
+*.pyc
+.DS_Store
+.streamlit/secrets.toml 
