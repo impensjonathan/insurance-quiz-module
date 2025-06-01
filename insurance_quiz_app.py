@@ -314,7 +314,7 @@ def generate_quiz_question_runtime(subject, objective, all_doc_chunks_text, fais
 
 def display_heatmap_grid(): 
     st.subheader("📘 Document Coverage & Performance Heatmap") 
-    st.caption("Click on a section's colored square to view its full text. Colors indicate performance.")
+    st.caption("Click on a section's colored square to view its full text. Note: YOU'LL NEED TO SCROLL UP TO SEE!")
     # Corrected CSS selector for pop-up expander to be more specific
     st.markdown("""
     <style>
@@ -719,7 +719,9 @@ elif st.session_state.quiz_mode == "summary":
     if st.session_state.get('scroll_to_summary_top', False):
         scroll_js_top = """ 
             <script>
-                window.scrollTo({ top: 0, behavior: 'auto' });
+                setTimeout(function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+                }, 100); // Delay of 100 milliseconds
             </script>
         """
         st.markdown(scroll_js_top, unsafe_allow_html=True)
@@ -778,7 +780,7 @@ elif st.session_state.quiz_mode == "summary":
     st.divider()
     col_sum_btn1, col_sum_btn2 = st.columns(2)
     with col_sum_btn1:
-        if st.button("Start New Quiz Once More", key="start_new_quiz_summary_ded_btn", type="primary", use_container_width=True):
+        if st.button("Reset Score and Start New Quiz", key="start_new_quiz_summary_ded_btn", type="primary", use_container_width=True):
             st.session_state.quiz_mode = "quiz_init"
             st.session_state.scroll_to_summary_top = False # Reset this just in case
             st.session_state.scroll_to_heatmap_detail = False 
@@ -810,21 +812,24 @@ elif st.session_state.quiz_mode == "summary":
     # --- END OF MOVED BUTTONS ---
     
     # --- Chunk Detail Expander (Pop-up) Logic ---
+# --- Chunk Detail Expander (Pop-up) Logic ---
     if st.session_state.get('show_heatmap_chunk_detail', False) and \
        st.session_state.get('selected_heatmap_chunk_index') is not None:
         
         selected_idx = st.session_state.selected_heatmap_chunk_index
         
-        # Define the target ID using selected_idx. This ID will be used by JS.
-        detail_expander_target_id = f"heatmap_detail_anchor_{selected_idx}" # Now defined at this level
+        # Define detail_expander_target_id here, using selected_idx which is known to be not None
+        detail_expander_target_id = f"heatmap_detail_anchor_{selected_idx}"
+        
+        # Place the anchor div here. It will always be created if we intend to show the detail.
+        st.markdown(f"<div id='{detail_expander_target_id}'></div>", unsafe_allow_html=True)
 
         if 0 <= selected_idx < len(st.session_state.doc_chunk_details):
-            st.markdown(f"<div id='{detail_expander_target_id}'></div>", unsafe_allow_html=True) # Anchor placed before expander
-
+            # This inner 'if' now only guards the actual display of content and expander actions
             chunk_info = st.session_state.doc_chunk_details[selected_idx]
             full_headings_str_for_title = " -> ".join(chunk_info.get("full_headings_list", [])) if chunk_info.get("full_headings_list") else "General Content"
             display_texts = []
-            current_chunk_headings_tuple = tuple(chunk_info.get("full_headings_list", []))
+            # ... (your logic for display_texts remains the same) ...
             if selected_idx > 0:
                 prev_chunk_info = st.session_state.doc_chunk_details[selected_idx - 1]
                 if chunk_info.get("full_headings_list", [None])[:-1] == prev_chunk_info.get("full_headings_list", [None])[:-1] and \
@@ -839,9 +844,10 @@ elif st.session_state.quiz_mode == "summary":
                    len(chunk_info.get("full_headings_list", [])) > 0:
                     if chunk_info.get("text"): display_texts.append("---")
                     display_texts.append(next_chunk_info.get("text", ""))
-            
+
             expander_label_detail = f"Path: {full_headings_str_for_title} (Chunk Index {selected_idx})"
             with st.expander(expander_label_detail, expanded=True):
+                # ... (content_html and buttons logic remains the same) ...
                 content_html = ""
                 first_text_segment_in_expander = True
                 for i_seg, text_segment in enumerate(display_texts):
@@ -852,7 +858,6 @@ elif st.session_state.quiz_mode == "summary":
                         content_html += f"<p style='margin-top: 2px; margin-bottom: 2px; line-height: 1.3;'>{text_segment}</p>"
                     if text_segment != "---": first_text_segment_in_expander = False
                 st.markdown(content_html, unsafe_allow_html=True)
-                
                 col1_exp_popup, col2_exp_popup = st.columns(2)
                 with col1_exp_popup:
                     if st.button("Quiz me on this chunk", key=f"quiz_me_btn_summary_ded_{selected_idx}", use_container_width=True):
@@ -867,21 +872,29 @@ elif st.session_state.quiz_mode == "summary":
                         st.session_state.selected_heatmap_chunk_index = None
                         st.session_state.scroll_to_heatmap_detail = False
                         st.rerun()
-            
-            # JavaScript injection for scrolling (now detail_expander_target_id is in scope)
-            if st.session_state.get('scroll_to_heatmap_detail', False):
-                scroll_js_detail = f"""
-                    <script>
-                        const targetElement = document.getElementById('{detail_expander_target_id}');
-                        if (targetElement) {{
-                            setTimeout(() => {{
-                                targetElement.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
-                            }}, 250); 
+        else: 
+            # If selected_idx is invalid, reset flags and rerun
+            print(f"Warning: selected_heatmap_chunk_index {selected_idx} was out of bounds. Hiding detail view.")
+            st.session_state.show_heatmap_chunk_detail = False 
+            st.session_state.selected_heatmap_chunk_index = None
+            # No st.rerun() here immediately, let the JS check below handle scroll flag if needed
+            # This else block will mean the expander is not shown.
+
+        # JavaScript injection for scrolling TO THE TOP OF THE PAGE
+        if st.session_state.get('scroll_to_heatmap_detail', False): # We still use this flag to trigger scroll once
+            scroll_js_to_anchor = f"""
+                <script>
+                    setTimeout(function() {{
+                        var anchor = document.getElementById('{detail_expander_target_id}');
+                        if (anchor) {{
+                            anchor.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
                         }}
-                    </script>
-                """
-                st.components.v1.html(scroll_js_detail, height=0, scrolling=False)
-                st.session_state.scroll_to_heatmap_detail = False 
+                    }}, 100);
+                </script>
+            """
+            st.components.v1.html(scroll_js_to_anchor, height=0, scrolling=False)
+            st.session_state.scroll_to_heatmap_detail = False
+            # ... (rest of your summary mode)
         else: 
             # If selected_idx is invalid, reset flags and rerun
             if st.session_state.get('show_heatmap_chunk_detail', False): 
@@ -895,7 +908,7 @@ elif st.session_state.quiz_mode == "summary":
     st.divider()
     col_sum_btn1, col_sum_btn2 = st.columns(2)
     with col_sum_btn1:
-        if st.button("Start New Quiz Once More", key="start_new_quiz_summary_ded_btn", type="primary", use_container_width=True):
+        if st.button("Reset Score and Start New Quiz", key="start_new_quiz_summary_ded_btn", type="primary", use_container_width=True):
             st.session_state.quiz_mode = "quiz_init"
             st.session_state.scroll_to_heatmap_detail = False
             st.rerun()
