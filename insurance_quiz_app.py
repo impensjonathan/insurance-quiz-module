@@ -396,12 +396,16 @@ def display_heatmap_grid():
 
         def _create_show_detail_callback(idx_to_show):
             def callback_with_captured_idx(captured_idx=idx_to_show):
-                if 'chunk_review_status' in st.session_state and 0 <= captured_idx < len(st.session_state.chunk_review_status):
-                    if st.session_state.chunk_review_status[captured_idx] == 0: 
-                        st.session_state.chunk_review_status[captured_idx] = 4 
+                if 'chunk_review_status' in st.session_state and \
+                0 <= captured_idx < len(st.session_state.chunk_review_status) and \
+                st.session_state.chunk_review_status[captured_idx] == 0: 
+                    st.session_state.chunk_review_status[captured_idx] = 4 
+
                 st.session_state.selected_heatmap_chunk_index = captured_idx
-                st.session_state.show_heatmap_chunk_detail = True
-                st.session_state.scroll_to_heatmap_detail = True
+                st.session_state.quiz_mode = "view_chunk_detail"  # Navigate to new page mode
+                # Ensure summary page scrolls to top when we eventually return to it
+                st.session_state.scroll_to_summary_top = True 
+                #st.rerun() 
             return callback_with_captured_idx
 
         if cols_for_squares is None: 
@@ -434,6 +438,8 @@ if 'quiz_mode' not in st.session_state:
 # when this part of the script is reached. For simplicity, keeping it as in your code.
 st.session_state.setdefault('scroll_to_summary_top', False) 
 st.session_state.setdefault('runtime_llm_configured', False)
+# In your session state initialization / setdefault area
+st.session_state.setdefault('scroll_to_view_chunk_detail_top', False)
 st.session_state.setdefault('runtime_gemini_model', None)
 if not st.session_state.get('runtime_llm_configured'):
     gemini_api_key_runtime = st.secrets.get("GEMINI_API_KEY")
@@ -649,62 +655,88 @@ elif st.session_state.quiz_mode == "quiz":
                                          disabled=st.session_state.show_explanation, label_visibility="collapsed")
             if not st.session_state.show_explanation:
                 st.session_state.user_answer = selected_opt_text.split(":")[0] if selected_opt_text and ":" in selected_opt_text else None
-            st.write("---")
+            # --- New button logic in your 'quiz' mode ---
+            st.write("---") # Separator before action buttons
+
             if not st.session_state.show_explanation:
-                if st.button("Submit Answer", type="primary", key=f"submit_q_{st.session_state.question_number}"):
-                    if st.session_state.user_answer is None: st.warning("Please select an answer.")
-                    else:
-                        st.session_state.total_questions_answered_in_current_quiz += 1
-                        correct_answer = q_data.get("correct_answer")
-                        context_indices_for_this_q_pregen = q_data.get("context_indices_used", []) # From pre-generated Qs
-                        
-                        if st.session_state.user_answer == correct_answer:
-                            st.session_state.feedback_message = "Correct!"
-                            st.session_state.last_answer_correct = True
-                            for idx in context_indices_for_this_q_pregen:
-                                if 0 <= idx < len(st.session_state.chunk_review_status) and st.session_state.chunk_review_status[idx] != 1:
-                                    st.session_state.chunk_review_status[idx] = 1
+                col1_action, col2_action = st.columns(2)
+                with col1_action:
+                    if st.button("Submit Answer", type="primary", key=f"submit_q_{st.session_state.question_number}", use_container_width=True):
+                        if st.session_state.user_answer is None:
+                            st.warning("Please select an answer.")
                         else:
-                            st.session_state.feedback_message = f"Incorrect. The correct answer was: **{correct_answer}**. {options.get(correct_answer, '')}"
-                            st.session_state.last_answer_correct = False
-                            incorrect_q_data = q_data.copy()
-                            incorrect_q_data["question_number"] = f"Pre-gen Q (Attempt {st.session_state.question_number})"
-                            incorrect_q_data["user_selected_answer_letter"] = st.session_state.user_answer
-                            incorrect_q_data["user_selected_answer_text"] = options.get(st.session_state.user_answer, "N/A")
-                            st.session_state.incorrectly_answered_questions.append(incorrect_q_data)
-                            for idx in context_indices_for_this_q_pregen:
-                                if 0 <= idx < len(st.session_state.chunk_review_status):
-                                    current_status = st.session_state.chunk_review_status[idx]
-                                    if current_status in [0, 4]: st.session_state.chunk_review_status[idx] = 2
-                                    elif current_status == 2: st.session_state.chunk_review_status[idx] = 3
-                        st.session_state.show_explanation = True
-                        st.rerun()
+                            # --- (Your existing answer processing logic for correct/incorrect) ---
+                            st.session_state.total_questions_answered_in_current_quiz += 1
+                            correct_answer = q_data.get("correct_answer")
+                            context_indices_for_this_q_pregen = q_data.get("context_indices_used", [])
+
+                            if st.session_state.user_answer == correct_answer:
+                                st.session_state.feedback_message = "Correct!"
+                                st.session_state.last_answer_correct = True
+                                for idx in context_indices_for_this_q_pregen:
+                                    if 0 <= idx < len(st.session_state.chunk_review_status) and st.session_state.chunk_review_status[idx] != 1:
+                                        st.session_state.chunk_review_status[idx] = 1
+                            else:
+                                st.session_state.feedback_message = f"Incorrect. The correct answer was: **{correct_answer}**. {options.get(correct_answer, '')}"
+                                st.session_state.last_answer_correct = False
+                                incorrect_q_data = q_data.copy()
+                                incorrect_q_data["question_number"] = f"Pre-gen Q (Attempt {st.session_state.question_number})"
+                                incorrect_q_data["user_selected_answer_letter"] = st.session_state.user_answer
+                                incorrect_q_data["user_selected_answer_text"] = options.get(st.session_state.user_answer, "N/A")
+                                st.session_state.incorrectly_answered_questions.append(incorrect_q_data)
+                                for idx in context_indices_for_this_q_pregen:
+                                    if 0 <= idx < len(st.session_state.chunk_review_status):
+                                        current_status = st.session_state.chunk_review_status[idx]
+                                        if current_status in [0, 4]: st.session_state.chunk_review_status[idx] = 2
+                                        elif current_status == 2: st.session_state.chunk_review_status[idx] = 3
+                            # --- (End of answer processing logic) ---
+                            st.session_state.show_explanation = True
+                            st.rerun() # Keep rerun for immediate feedback display
+
+                with col2_action:
+                    if st.button("Stop Quiz & View Summary", key="stop_quiz_main_btn_ded_pre_submit", use_container_width=True): 
+                        st.session_state.quiz_mode = "summary"
+                        st.session_state.scroll_to_summary_top = True 
+                        st.rerun() # Keep rerun for navigation
+
+            # This 'if' block now handles the display AFTER an answer is submitted
             if st.session_state.show_explanation:
                 if st.session_state.feedback_message:
-                    if st.session_state.last_answer_correct: st.success(st.session_state.feedback_message)
-                    else: st.error(st.session_state.feedback_message)
+                    if st.session_state.last_answer_correct:
+                        st.success(st.session_state.feedback_message)
+                    else:
+                        st.error(st.session_state.feedback_message)
                 st.caption(f"Explanation: {q_data.get('explanation', 'No explanation available.')}")
-                if st.session_state.current_quiz_question_idx_ptr < len(st.session_state.current_quiz_questions) - 1:
-                    if st.button("Next Question", key=f"next_q_{st.session_state.question_number}"):
-                        st.session_state.current_quiz_question_idx_ptr += 1
-                        st.session_state.question_number +=1
-                        st.session_state.current_question_data = st.session_state.current_quiz_questions[st.session_state.current_quiz_question_idx_ptr]
-                        st.session_state.user_answer = None
-                        st.session_state.feedback_message = None
-                        st.session_state.show_explanation = False
-                        st.session_state.last_answer_correct = None
-                        st.rerun()
-                else:
-                    st.info("You have completed all pre-generated questions for this quiz session!")
-                    if st.button("View Summary", key="view_summary_from_quiz_end", type="primary"):
+
+                st.write("---") # Separator before next action buttons
+                col1_nav, col2_nav = st.columns(2)
+
+                with col1_nav:
+                    if st.session_state.current_quiz_question_idx_ptr < len(st.session_state.current_quiz_questions) - 1:
+                        if st.button("Next Question", key=f"next_q_{st.session_state.question_number}", use_container_width=True, type="primary"):
+                            st.session_state.current_quiz_question_idx_ptr += 1
+                            st.session_state.question_number +=1
+                            st.session_state.current_question_data = st.session_state.current_quiz_questions[st.session_state.current_quiz_question_idx_ptr]
+                            st.session_state.user_answer = None
+                            st.session_state.feedback_message = None
+                            st.session_state.show_explanation = False
+                            st.session_state.last_answer_correct = None
+                            st.rerun() # Keep rerun for navigation
+                    else: # End of quiz
+                        st.info("You have completed all pre-generated questions for this quiz session!")
+                        if st.button("View Summary", key="view_summary_from_quiz_end", type="primary", use_container_width=True):
+                            st.session_state.quiz_mode = "summary"
+                            st.session_state.scroll_to_summary_top = True
+                            st.rerun() # Keep rerun for navigation
+                with col2_nav:
+                    # "Stop Quiz" button also available after feedback, next to "Next/View Summary"
+                    if st.button("Stop Quiz & View Summary", key="stop_quiz_main_btn_ded_post_submit", use_container_width=True): 
                         st.session_state.quiz_mode = "summary"
-                        st.session_state.scroll_to_summary_top = True # <-- SET FLAG
-                        st.rerun()
-            st.divider()
-            if st.button("Stop Quiz & View Summary", key="stop_quiz_main_btn_ded"): 
-                st.session_state.quiz_mode = "summary"
-                st.session_state.scroll_to_summary_top = True # <--- ADD THIS LINE
-                st.rerun()
+                        st.session_state.scroll_to_summary_top = True 
+                        st.rerun() # Keep rerun for navigation
+
+            # The old st.divider() and single "Stop Quiz" button at the very end of quiz_container are removed.
+# --- End of new button logic ---
     else:
         st.info("Loading question or quiz has ended.")
         if st.button("Back to Welcome", key="quiz_ended_back_to_welcome_btn_ded"): 
@@ -811,129 +843,82 @@ elif st.session_state.quiz_mode == "summary":
     st.divider()
     # --- END OF MOVED BUTTONS ---
     
-    # --- Chunk Detail Expander (Pop-up) Logic ---
-# --- Chunk Detail Expander (Pop-up) Logic ---
-    if st.session_state.get('show_heatmap_chunk_detail', False) and \
-       st.session_state.get('selected_heatmap_chunk_index') is not None:
-        
-        selected_idx = st.session_state.selected_heatmap_chunk_index
-        
-        # Define detail_expander_target_id here, using selected_idx which is known to be not None
-        detail_expander_target_id = f"heatmap_detail_anchor_{selected_idx}"
-        
-        # Place the anchor div here. It will always be created if we intend to show the detail.
-        st.markdown(f"<div id='{detail_expander_target_id}'></div>", unsafe_allow_html=True)
 
-        if 0 <= selected_idx < len(st.session_state.doc_chunk_details):
-            # This inner 'if' now only guards the actual display of content and expander actions
-            chunk_info = st.session_state.doc_chunk_details[selected_idx]
-            full_headings_str_for_title = " -> ".join(chunk_info.get("full_headings_list", [])) if chunk_info.get("full_headings_list") else "General Content"
-            display_texts = []
-            # ... (your logic for display_texts remains the same) ...
-            if selected_idx > 0:
-                prev_chunk_info = st.session_state.doc_chunk_details[selected_idx - 1]
-                if chunk_info.get("full_headings_list", [None])[:-1] == prev_chunk_info.get("full_headings_list", [None])[:-1] and \
-                   len(chunk_info.get("full_headings_list", [])) > 0:
-                    display_texts.append(prev_chunk_info.get("text", ""))
-                    if chunk_info.get("text"): display_texts.append("---")
-            current_text = chunk_info.get('text', 'Error: Current text missing')
-            display_texts.append(f"<b>{current_text}</b>")
-            if selected_idx < len(st.session_state.doc_chunk_details) - 1:
-                next_chunk_info = st.session_state.doc_chunk_details[selected_idx + 1]
-                if chunk_info.get("full_headings_list", [None])[:-1] == next_chunk_info.get("full_headings_list", [None])[:-1] and \
-                   len(chunk_info.get("full_headings_list", [])) > 0:
-                    if chunk_info.get("text"): display_texts.append("---")
-                    display_texts.append(next_chunk_info.get("text", ""))
 
-            expander_label_detail = f"Path: {full_headings_str_for_title} (Chunk Index {selected_idx})"
-            with st.expander(expander_label_detail, expanded=True):
-                # ... (content_html and buttons logic remains the same) ...
-                content_html = ""
-                first_text_segment_in_expander = True
-                for i_seg, text_segment in enumerate(display_texts):
-                    if text_segment == "---":
-                        if not first_text_segment_in_expander and (i_seg > 0 and display_texts[i_seg-1] != "---"):
-                            content_html += "<hr style='margin-top: 2px; margin-bottom: 2px; border-top: 1px solid #eee;'>"
-                    else:
-                        content_html += f"<p style='margin-top: 2px; margin-bottom: 2px; line-height: 1.3;'>{text_segment}</p>"
-                    if text_segment != "---": first_text_segment_in_expander = False
-                st.markdown(content_html, unsafe_allow_html=True)
-                col1_exp_popup, col2_exp_popup = st.columns(2)
-                with col1_exp_popup:
-                    if st.button("Quiz me on this chunk", key=f"quiz_me_btn_summary_ded_{selected_idx}", use_container_width=True):
-                        st.session_state.quiz_mode = "heatmap_quiz_init"
-                        st.session_state.heatmap_quiz_focal_chunk_idx = selected_idx
-                        st.session_state.show_heatmap_chunk_detail = False
-                        st.session_state.scroll_to_heatmap_detail = False
-                        st.rerun()
-                with col2_exp_popup:
-                    if st.button("Close Detail", key=f"close_detail_exp_summary_ded_{selected_idx}", use_container_width=True):
-                        st.session_state.show_heatmap_chunk_detail = False
-                        st.session_state.selected_heatmap_chunk_index = None
-                        st.session_state.scroll_to_heatmap_detail = False
-                        st.rerun()
-        else: 
-            # If selected_idx is invalid, reset flags and rerun
-            print(f"Warning: selected_heatmap_chunk_index {selected_idx} was out of bounds. Hiding detail view.")
-            st.session_state.show_heatmap_chunk_detail = False 
-            st.session_state.selected_heatmap_chunk_index = None
-            # No st.rerun() here immediately, let the JS check below handle scroll flag if needed
-            # This else block will mean the expander is not shown.
-
-        # JavaScript injection for scrolling TO THE TOP OF THE PAGE
-        if st.session_state.get('scroll_to_heatmap_detail', False): # We still use this flag to trigger scroll once
-            scroll_js_to_anchor = f"""
-                <script>
-                    setTimeout(function() {{
-                        var anchor = document.getElementById('{detail_expander_target_id}');
-                        if (anchor) {{
-                            anchor.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
-                        }}
-                    }}, 100);
-                </script>
-            """
-            st.components.v1.html(scroll_js_to_anchor, height=0, scrolling=False)
-            st.session_state.scroll_to_heatmap_detail = False
-            # ... (rest of your summary mode)
-        else: 
-            # If selected_idx is invalid, reset flags and rerun
-            if st.session_state.get('show_heatmap_chunk_detail', False): 
-                print(f"Warning: selected_heatmap_chunk_index {selected_idx} was out of bounds. Hiding detail view.")
-                st.session_state.show_heatmap_chunk_detail = False 
-                st.session_state.selected_heatmap_chunk_index = None
-                st.session_state.scroll_to_heatmap_detail = False 
-                st.rerun() 
-    
     display_heatmap_grid()
-    st.divider()
-    col_sum_btn1, col_sum_btn2 = st.columns(2)
-    with col_sum_btn1:
-        if st.button("Reset Score and Start New Quiz", key="start_new_quiz_summary_ded_btn", type="primary", use_container_width=True):
-            st.session_state.quiz_mode = "quiz_init"
-            st.session_state.scroll_to_heatmap_detail = False
-            st.rerun()
-    with col_sum_btn2:
-        if st.button("Back to Welcome Page", key="summary_to_welcome_ded_btn", use_container_width=True):
-            st.session_state.quiz_mode = "welcome"
-            st.session_state.question_number = 0
-            st.session_state.current_question_data = None
-            st.session_state.incorrectly_answered_questions = []
-            st.session_state.total_questions_answered_in_current_quiz = 0
-            if st.session_state.pre_generated_questions:
-                st.session_state.available_pregen_q_indices = random.sample(
-                    list(range(len(st.session_state.pre_generated_questions))),
-                    len(st.session_state.pre_generated_questions)
-                )
-            else: st.session_state.available_pregen_q_indices = []
-            st.session_state.current_quiz_questions = []
-            st.session_state.current_quiz_question_idx_ptr = 0
-            if st.session_state.doc_chunk_details:
-                st.session_state.chunk_review_status = [0] * len(st.session_state.doc_chunk_details)
-            else: st.session_state.chunk_review_status = []
-            st.session_state.scroll_to_heatmap_detail = False
-            st.session_state.quiz_started_at_least_once = False
-            st.rerun()
+    
+# Replace your entire existing: elif st.session_state.quiz_mode == "view_chunk_detail": block with this:
 
+elif st.session_state.quiz_mode == "view_chunk_detail":
+    # --- Header for View Chunk Detail Page (Logo and "AI Quiz Tutor" title removed) ---
+    st.header("Document Chunk Detail") # This is now the main title for this page
+    st.write("---") # Separator after the header
+    # --- End Header for View Chunk Detail Page ---
+
+    selected_idx = st.session_state.get('selected_heatmap_chunk_index')
+
+    if selected_idx is None or not (0 <= selected_idx < len(st.session_state.get('doc_chunk_details', []))):
+        st.error("No chunk selected or invalid chunk index.")
+        if st.button("Back to Summary Page", key="vcd_back_to_summary_error"):
+            st.session_state.quiz_mode = "summary"
+            st.session_state.scroll_to_summary_top = True 
+           # st.rerun()
+    else:
+        chunk_info = st.session_state.doc_chunk_details[selected_idx]
+        full_headings_str_for_title = " -> ".join(chunk_info.get("full_headings_list", ["Selected Chunk"]))
+        
+        st.subheader(f"Details for Chunk: {full_headings_str_for_title}")
+        # The caption "(Based on Document Chunk Index: {selected_idx})" has been removed.
+        # st.caption(f"(Based on Document Chunk Index: {selected_idx})") # <-- DELETED/COMMENTED OUT
+        
+        # To reduce spacing between the "Previous", "Selected", and "Next" chunk text blocks,
+        # we will remove the st.markdown("---") that was previously between them.
+        # The spacing within each paragraph is controlled by p_style.
+        
+        p_style = "margin-top: 2px; margin-bottom: 2px; line-height: 1.2;" # Reduced line-height slightly for tighter packing
+
+        # Previous Chunk
+        if selected_idx > 0:
+            prev_chunk_idx = selected_idx - 1
+            prev_chunk_info = st.session_state.doc_chunk_details[prev_chunk_idx]
+            if chunk_info.get("full_headings_list", [None])[:-1] == prev_chunk_info.get("full_headings_list", [None])[:-1] and \
+               len(chunk_info.get("full_headings_list", [])) > 0 :
+                st.markdown(f"**Previous Chunk (Chunk {prev_chunk_idx} - for context):**")
+                prev_text_content = prev_chunk_info.get('text', '').replace('\n', '<br>')
+                st.markdown(f"<p style='{p_style}'>{prev_text_content}</p>", unsafe_allow_html=True)
+                st.markdown("---") # Removed separator for tighter spacing
+        
+        # Selected Chunk
+        st.markdown(f"**Selected Chunk Content (Chunk {selected_idx}):**")
+        current_text_content = chunk_info.get('text', 'Error: Current text missing').replace('\n', '<br>')
+        st.markdown(f"<p style='{p_style}'><b>{current_text_content}</b></p>", unsafe_allow_html=True)
+        st.markdown("---")
+
+        # Next Chunk
+        if selected_idx < len(st.session_state.doc_chunk_details) - 1:
+            next_chunk_idx = selected_idx + 1
+            next_chunk_info = st.session_state.doc_chunk_details[next_chunk_idx]
+            if chunk_info.get("full_headings_list", [None])[:-1] == next_chunk_info.get("full_headings_list", [None])[:-1] and \
+               len(chunk_info.get("full_headings_list", [])) > 0 :
+                # st.markdown("---") # Removed separator for tighter spacing
+                st.markdown(f"**Next Chunk (Chunk {next_chunk_idx} - for context):**")
+                next_text_content = next_chunk_info.get('text', '').replace('\n', '<br>')
+                st.markdown(f"<p style='{p_style}'>{next_text_content}</p>", unsafe_allow_html=True)
+        
+        st.markdown("---") # Final separator before buttons
+        
+        # Buttons for this new page
+        col1_vcd, col2_vcd = st.columns(2)
+        with col1_vcd:
+            if st.button("Quiz me on this Topic", key=f"quiz_me_btn_view_chunk_{selected_idx}", type="primary", use_container_width=True):
+                st.session_state.heatmap_quiz_focal_chunk_idx = selected_idx 
+                st.session_state.quiz_mode = "heatmap_quiz_init"
+                st.rerun()
+        with col2_vcd:
+            if st.button("Back to Summary Page", key=f"view_chunk_to_summary_btn_{selected_idx}", use_container_width=True):
+                st.session_state.quiz_mode = "summary"
+                st.session_state.scroll_to_summary_top = True 
+                st.rerun()
 elif st.session_state.quiz_mode == "heatmap_quiz_init":
     st.title("Focused Quiz: Intro to Insurance")
     focal_chunk_idx = st.session_state.get('heatmap_quiz_focal_chunk_idx')
