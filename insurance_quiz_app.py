@@ -502,19 +502,29 @@ if 'app_initialized' not in st.session_state:
     # Initialize heatmap status arrays
     st.session_state.chunk_review_status = [0] * len(doc_chunk_details)
 # Initialize chunk_hover_labels from loaded doc_chunk_details (first 50 words)
-    # This replaces the placeholder line for st.session_state.chunk_hover_labels
-    if st.session_state.doc_chunk_details: # Check if doc_chunk_details is loaded and not empty
-        num_words_for_hover = 50
-        hover_labels = []
-        for item in st.session_state.doc_chunk_details: # Iterate over the loaded chunk details
-            text_content = item.get('text', '') # Get the text from each chunk detail
-            words = text_content.split()
-            label = ' '.join(words[:num_words_for_hover])
-            if len(words) > num_words_for_hover:
-                label += "..."
-            hover_labels.append(label)
-        st.session_state.chunk_hover_labels = hover_labels
+    # show frist 50 words
+    #if st.session_state.doc_chunk_details: # Check if doc_chunk_details is loaded and not empty
+    #    num_words_for_hover = 50
+    #    hover_labels = []
+    #    for item in st.session_state.doc_chunk_details: # Iterate over the loaded chunk details
+    #        text_content = item.get('text', '') # Get the text from each chunk detail
+    #        words = text_content.split()
+    #        label = ' '.join(words[:num_words_for_hover])
+    #        if len(words) > num_words_for_hover:
+    #            label += "..."
+    #        hover_labels.append(label)
+    #    st.session_state.chunk_hover_labels = hover_labels
+    # This is the NEW block to replace the one above:
 
+# Initialize chunk_hover_labels from the 'chunk_summary' metadata
+    if st.session_state.doc_chunk_details:
+        hover_labels = []
+        for i, item in enumerate(st.session_state.doc_chunk_details):
+            # Get the chunk summary. Provide a fallback message if it doesn't exist
+            # in case you run the app with older pre-processed data.
+            summary = item.get('chunk_summary', f'Chunk {i+1} - Summary not available')
+            hover_labels.append(summary)
+        st.session_state.chunk_hover_labels = hover_labels
         # The following line for chunk_review_status is likely already correct in your code
         # but ensure it's based on len(st.session_state.doc_chunk_details)
         # If it's not already there or different, make sure it looks like this:

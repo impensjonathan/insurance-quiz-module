@@ -67,6 +67,29 @@ if PATH_TO_YOUR_INSURANCE_DOCUMENT.startswith("REPLACE_WITH_ACTUAL_PATH") or \
     exit()
 print("DEBUG: Critical constants check passed.") # Add this line too
 
+def clean_chunk_text(text):
+    # 1. Remove the double asterisks used for unwanted bolding
+    text = text.replace('**', '')
+    
+    # 2. Normalize whitespace:
+    #    - Replace multiple spaces/tabs/newlines with a single space
+    text = re.sub(r'\s+', ' ', text)
+    #    - You might want to be more sophisticated if you want to preserve legitimate 
+    #      paragraph breaks (e.g., looking for double newlines specifically).
+    #      For now, this will tend to join lines that might have been separated
+    #      due to the **word** being on its own line.
+    
+    # 3. A more targeted approach for newlines around single words or short phrases 
+    #    that were previously bolded and isolated (this is more complex and might need iteration):
+    #    Example: remove newlines directly adjacent to where asterisks were removed if it's a short phrase.
+    #    This step is tricky without seeing more examples of the raw data with newlines.
+    #    A simple `re.sub(r'\s*\n\s*', ' ', text)` might be too aggressive if you have intentional single newlines.
+    #    
+    #    Let's stick with the replace('**', '') and whitespace normalization for now,
+    #    and see how much that improves things. If single words are still isolated,
+    #    we might need to refine the whitespace normalization.
+
+    return text.strip()
 
 def process_document_with_docling(document_bytes, filename, tokenizer_model_id, max_tokens, min_words):
     print(f"--- Docling Processing: Starting for file: {filename} ---")
@@ -104,19 +127,24 @@ def process_document_with_docling(document_bytes, filename, tokenizer_model_id, 
         print(f"--- Docling: HybridChunker produced {original_hybridchunker_count} initial chunks. Filtering... ---")
         
         for i, chunk_obj in enumerate(all_docling_chunks_from_hybridchunker):
-            text = chunk_obj.text.strip() if hasattr(chunk_obj, 'text') else ""
+            # 1. Get the raw text first
+            text_raw = chunk_obj.text.strip() if hasattr(chunk_obj, 'text') else ""
+            
+            # 2. Apply your cleaning function
+            text_cleaned = clean_chunk_text(text_raw) 
+
+            # 3. Use the cleaned text for subsequent operations
             meta = chunk_obj.meta if hasattr(chunk_obj, 'meta') else None
             headings = meta.headings if meta and hasattr(meta, 'headings') and meta.headings else []
-            words = text.split()
+            words = text_cleaned.split() # Use cleaned text for word count
             num_words = len(words)
-            # Filter for chunks that have headings and meet min word count
+            
             if headings and num_words >= min_words: 
                 processed_chunks_intermediate.append({
-                    "text": text,
-                    "headings": headings, # This is the full_headings_list
-                    # "original_docling_chunk_index": i # We might not need this for the new app
+                    "text": text_cleaned, # Store the CLEANED text
+                    "headings": headings, 
                 })
-        
+            
         final_substantive_chunk_count = len(processed_chunks_intermediate)
         processing_time = time.time() - start_time
         print(f"--- Docling Processing: Original HybridChunker chunks: {original_hybridchunker_count}. Final substantive chunks: {final_substantive_chunk_count}. Time: {processing_time:.2f}s. ---")
@@ -295,6 +323,91 @@ def extract_with_pattern(key, pattern, text_to_search):
     
     print(f"--- Parsing Warning: Could not find '{key}' in response using pattern: {pattern} ---")
     return None
+
+# Add this new function to preprocess_insurance_doc.py
+
+def generate_chunk_summary(chunk_text, llm_instance, max_words=6):
+    if not llm_instance:
+        print("ERROR: LLM instance not configured for chunk summary generation.")
+        return "Summary not generated (LLM error)"
+    if not chunk_text:
+        print("WARNING: Empty chunk text provided for summary generation.")
+        return "N/A (empty chunk)"
+
+    # Truncate chunk_text if it's excessively long for a summary prompt, 
+    # though the LLM should handle it. This is a safeguard.
+    max_context_for_summary = 2000 # Characters
+    if len(chunk_text) > max_context_for_summary:
+        chunk_text_for_prompt = chunk_text[:max_context_for_summary] + "..."
+    else:
+        chunk_text_for_prompt = chunk_text
+
+    prompt = f"""
+    Analyze the following text snippet from a document about insurance.
+    Your task is to provide a very concise summary of its main topic or key information in **up to {max_words} words**.
+    The summary should give a quick idea of what this specific text snippet is about.
+
+    Text Snippet:
+    ---
+    {chunk_text_for_prompt}
+    ---
+
+    Concise Summary (up to {max_words} words):
+    """
+    
+    summary_text = f"Error generating summary (max_words: {max_words})" # Default error message
+    try:
+        print(f"--- Generating summary for chunk (first 50 chars): '{chunk_text_for_prompt[:50]}...' ---")
+        response = llm_instance.generate_content(prompt, request_options={'timeout': 60})
+        if response and response.text:
+            summary_text = response.text.strip()
+            # Ensure it's not too long (LLMs can sometimes ignore word limits)
+            words = summary_text.split()
+            if len(words) > max_words:
+                summary_text = " ".join(words[:max_words]) + "..."
+            print(f"--- Generated chunk summary: '{summary_text}' ---")
+        else:
+            print("WARNING: Chunk summary generation - LLM response was empty or invalid.")
+            summary_text = f"Summary N/A (LLM error, max_words: {max_words})"
+
+    except Exception as e:
+        print(f"ERROR during chunk summary LLM call: {type(e).__name__}: {e}")
+        traceback.print_exc()
+        summary_text = f"Summary error (exception, max_words: {max_words})"
+    
+    return summary_text
+
+def create_chunk_summary_table_file(doc_chunk_details_list, output_dir):
+    """
+    Creates a human-readable text file with a table of chunk details.
+    """
+    review_filepath = os.path.join(output_dir, "insurance_chunk_summary_table.txt")
+    print(f"\n--- Creating Chunk Summary Table File: {review_filepath} ---")
+    try:
+        with open(review_filepath, "w", encoding="utf-8") as f_review:
+            # Write the table header
+            f_review.write(f"| {'Header':<60} | {'Subheader':<80} | {'Subsubheader':<80} | {'Chunk #':<10} | {'Chunk Summary':<60} |\n")
+            f_review.write(f"|{'-'*62}|{'-'*82}|{'-'*82}|{'-'*12}|{'-'*62}|\n")
+
+            # Write each chunk's data as a row in the table
+            for i, chunk_detail in enumerate(doc_chunk_details_list):
+                headings = chunk_detail.get("full_headings_list", [])
+                
+                # Assign headings to variables, providing a blank if the level doesn't exist
+                header_1 = headings[0] if len(headings) > 0 else ""
+                header_2 = headings[1] if len(headings) > 1 else ""
+                header_3 = headings[2] if len(headings) > 2 else ""
+                
+                chunk_num = str(i + 1)
+                chunk_summary = chunk_detail.get('chunk_summary', 'N/A')
+
+                # Format each cell with padding to align the table columns
+                f_review.write(f"| {header_1:<60} | {header_2:<80} | {header_3:<80} | {chunk_num:<10} | {chunk_summary:<60} |\n")
+        
+        print(f"Successfully created chunk summary table file: {review_filepath}")
+    except Exception as e:
+        print(f"ERROR: Could not write the chunk summary table file: {e}")
+        traceback.print_exc()
 
 def generate_single_quiz_question_with_pro_model(pro_llm_instance, context_chunks_list, subject, objective):
     if not pro_llm_instance: 
@@ -550,6 +663,46 @@ def main_preprocess():
         json.dump(document_metadata, f, indent=4)
     print(f"Saved theme and objective to {metadata_filepath}")
 
+# Inside main_preprocess() function in preprocess_insurance_doc.py
+
+    # ... (after Docling processing and substantive_chunks_text_list & doc_chunk_details_list are created) ...
+    # substantive_chunks_text_list, doc_chunk_details_list = process_document_with_docling(...)
+    # if not substantive_chunks_text_list: ... return ...
+    # print(f"Docling processing yielded {len(substantive_chunks_text_list)} substantive chunks.")
+
+    # --- NEW: Generate summaries for each chunk detail ---
+    print("\n--- Generating Chunk Summaries (Pro Model) ---")
+    if doc_chunk_details_list: # Check if there are details to process
+        for i, chunk_detail in enumerate(doc_chunk_details_list):
+            print(f"Generating summary for chunk detail {i+1}/{len(doc_chunk_details_list)}...")
+            chunk_text_to_summarize = chunk_detail.get("text", "")
+            summary = generate_chunk_summary(chunk_text_to_summarize, pro_model_instance, max_words=6)
+            chunk_detail["chunk_summary"] = summary # Add summary to the dictionary
+
+            # Add a small delay after each summary generation call if using a Pro model
+            # Adjust as needed, similar to question generation.
+            # This is separate from the main question generation loop's sleep.
+            if (i + 1) % 10 == 0: # Optional: pause every 10 summaries
+                 print("Pausing briefly during chunk summary generation...")
+                 time.sleep(5) # Shorter pause might be okay for summaries
+            else:
+                 time.sleep(0.5) # Very short pause
+        print("--- Finished generating all chunk summaries. ---")
+    else:
+        print("--- No chunk details found to generate summaries for. ---")
+    # --- END OF NEW CHUNK SUMMARY GENERATION ---
+
+    # Now, when doc_chunk_details_list is saved to insurance_doc_chunk_details.json,
+    # it will include the "chunk_summary" field.
+    # The existing save operation for doc_details_filepath will handle this:
+    # doc_details_filepath = os.path.join(OUTPUT_DATA_DIRECTORY, "insurance_doc_chunk_details.json")
+    # with open(doc_details_filepath, "w") as f:
+    #     json.dump(doc_chunk_details_list, f, indent=4)
+    # print(f"Document chunk details (with text, headings & summaries) saved to {doc_details_filepath}")
+    # You can update the print statement above if you like.
+
+    # ... (the rest of your main_preprocess: Determine Theme, Generate Embeddings, Generate Questions, etc.) ...
+
     # 5. Generate Embeddings & Build FAISS Index
     print("\n--- Generating Embeddings & Building FAISS Index ---")
     faiss_index = generate_embeddings_and_faiss_index(substantive_chunks_text_list, EMBEDDING_MODEL_ID)
@@ -569,9 +722,12 @@ def main_preprocess():
     
     # Save doc_chunk_details (with text and headings) for heatmap use
     doc_details_filepath = os.path.join(OUTPUT_DATA_DIRECTORY, "insurance_doc_chunk_details.json")
-    with open(doc_details_filepath, "w") as f:
+    with open(doc_details_filepath, "w", encoding="utf-8") as f:
         json.dump(doc_chunk_details_list, f, indent=4)
-    print(f"Document chunk details (with text & headings) saved to {doc_details_filepath}")
+    print(f"Document chunk details (with text, headings & summaries) saved to {doc_details_filepath}")
+    if doc_chunk_details_list:
+        create_chunk_summary_table_file(doc_chunk_details_list, OUTPUT_DATA_DIRECTORY)
+
 
     # 6. Pre-generate Quiz Questions (using Pro model)
     print("\n--- Pre-generating Quiz Questions (Pro Model) ---")
@@ -707,7 +863,16 @@ def main_preprocess():
                 for i, q_data in enumerate(pre_generated_questions):
                     f_review.write(f"QUESTION #{i + 1}\n")
                     f_review.write("-" * 20 + "\n")
-                    f_review.write(f"Focal Chunk Index: {q_data.get('focal_chunk_index', 'N/A')}\n")
+                    
+                    # First, get the focal index from the question data
+                    focal_idx_for_review = q_data.get('focal_chunk_index', -1) # Use -1 as a default for invalid index
+                    f_review.write(f"Focal Chunk Index: {focal_idx_for_review if focal_idx_for_review != -1 else 'N/A'}\n")
+                    
+                    # Now, use focal_idx_for_review to get the summary
+                    chunk_summary_for_review = "N/A (focal index missing or invalid)"
+                    if 0 <= focal_idx_for_review < len(doc_chunk_details_list):
+                        chunk_summary_for_review = doc_chunk_details_list[focal_idx_for_review].get('chunk_summary', 'N/A (summary not found)')
+                    f_review.write(f"Focal Chunk Summary (up to 6 words): {chunk_summary_for_review}\n")
                     # context_indices_used might be a list of integers
                     context_indices_str = ", ".join(map(str, q_data.get('context_indices_used', [])))
                     f_review.write(f"Context Indices Used: [{context_indices_str}]\n")
