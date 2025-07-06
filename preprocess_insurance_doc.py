@@ -40,7 +40,6 @@ OUTPUT_DATA_DIRECTORY = "preprocessed_insurance_data" # Folder to save output fi
 PREPROCESSING_PRO_MODEL_ID = "gemini-1.5-pro-latest"
 EMBEDDING_MODEL_ID = "models/text-embedding-004"
 CORE_SUBJECT = "Insurance Principles" 
-#PREPROCESSING_PRO_MODEL_ID = "gemini-1.5-flash" # Use Flash for pre-processing for now
 
 # Docling/Chunking Config
 TOKENIZER_MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"

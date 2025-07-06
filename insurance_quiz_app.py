@@ -22,7 +22,7 @@ st.set_page_config(layout="centered", page_title="AI Quiz Tutor")
 PREPROCESSED_DATA_DIR = "preprocessed_insurance_data"
 ORIGINAL_DOC_FILENAME = "Intro into Insurance 2025 v04.docx" # !!! USER: Ensure this matches the copied filename in preprocessed_data
 # --- Add Keyrus Logo ---
-LOGO_PATH = "assets/logo-keyrus.svg" 
+#LOGO_PATH = "assets/logo-keyrus.svg" 
 # --- End of Logo ---
 THEME_OBJECTIVE_FILE = os.path.join(PREPROCESSED_DATA_DIR, "insurance_theme_objective.json")
 DOC_CHUNK_DETAILS_FILE = os.path.join(PREPROCESSED_DATA_DIR, "insurance_doc_chunk_details.json")
@@ -314,7 +314,7 @@ def generate_quiz_question_runtime(subject, objective, all_doc_chunks_text, fais
 
 def display_heatmap_grid(): 
     st.subheader("📘 Document Coverage & Performance Heatmap") 
-    st.caption("Click on a section's colored square to view its full text. Note: YOU'LL NEED TO SCROLL UP TO SEE!")
+    st.caption("Click on a section's colored square to view its full text.")
     # Corrected CSS selector for pop-up expander to be more specific
     st.markdown("""
     <style>
@@ -545,12 +545,12 @@ if 'app_initialized' not in st.session_state:
 
 if st.session_state.quiz_mode == "welcome":
     # Welcome Page specific header elements
-    try:
-        if 'LOGO_PATH' in globals() and os.path.exists(LOGO_PATH):
-             st.image(LOGO_PATH, width=150) # Adjust width as needed
-        # else: st.caption("Logo not found for welcome") # Optional: placeholder if needed
-    except Exception as e:
-        print(f"Error loading logo on welcome page: {e}")
+    #try:
+    #    if 'LOGO_PATH' in globals() and os.path.exists(LOGO_PATH):
+    #         st.image(LOGO_PATH, width=150) # Adjust width as needed
+    #    # else: st.caption("Logo not found for welcome") # Optional: placeholder if needed
+    #except Exception as e:
+    #    print(f"Error loading logo on welcome page: {e}")
 
     st.title("AI Quiz Tutor") 
     st.header("Introduction to Insurance") 
